@@ -1,39 +1,73 @@
-<button id="cadAnimal"> Cadastrar animal</button>
+<div class="row-fluid">
+    <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="images[0]" alt="Random first slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="images[1]" alt="Random second slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>Second slide label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="images[2]" alt="Random third slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>Third slide label</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+</div>
+<div class="container-fluid" id="teste">
+<div class="row-fluid">
+        <button id="cadAnimal"> Cadastrar animal</button>
 
-<div class="container">
-    <p> Encontre seu parceiro</p>
-    <form action="">
-        <label for="estado"> Selecione um estado</label>
-        <select id="estado">
-            <option>Santa Catarina</option>
-            <option> São paulo</option>
-            <option> Rio de janeiro</option>
-        </select>
+    </div>
+    <div class="container-filtro mb-4 mr-auto row-fluid">
+        <p> Encontre seu parceiro</p>
+        <form action="">
+            <label for="estado"> Selecione um estado</label>
+            <select id="estado">
+                <option>Santa Catarina</option>
+                <option> São paulo</option>
+                <option> Rio de janeiro</option>
+            </select>
 
-        <label for="cidade"> Selecione uma cidade</label>
-        <select id="cidade">
-            <option> Blumenau</option>
-            <option> Bauru</option>
-            <option> Ipanema </option>
-        </select>
-        <br>
-        <label for="porte"> Porte</label>
-        <br>
-        <select id="porte">
-            <option>Pequeno</option>
-            <option>Médio</option>
-            <option>Grande</option>
-        </select>
-        <br>
-        <label for="especie"> Especie</label>
-        <br>
-        <select id="especie">
-            <option>Cachorro</option>
-            <option>Gato</option>
-            <option>Cavalo</option>
-        </select>
-        <br>
-        <input type="submit" id="filtrar" value="Filtrar">
-    </form>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
+            <label for="cidade"> Selecione uma cidade</label>
+            <select id="cidade">
+                <option> Blumenau</option>
+                <option> Bauru</option>
+                <option> Ipanema </option>
+            </select>
+            <br>
+            <label for="porte"> Porte</label>
+            <br>
+            <select id="porte">
+                <option>Pequeno</option>
+                <option>Médio</option>
+                <option>Grande</option>
+            </select>
+            <br>
+            <label for="especie"> Especie</label>
+            <br>
+            <select id="especie">
+                <option>Cachorro</option>
+                <option>Gato</option>
+                <option>Cavalo</option>
+            </select>
+            <br>
+            <input type="submit" id="filtrar" value="Filtrar">
+        </form>
+    </div>
 </div>
