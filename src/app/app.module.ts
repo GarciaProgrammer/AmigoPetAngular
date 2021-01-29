@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -9,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { AnimalComponent } from './animal/animal.component';
+import { FormsModule } from '@angular/forms';
+import { EstadoService } from './services/estado.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +25,11 @@ import { AnimalComponent } from './animal/animal.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [EstadoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

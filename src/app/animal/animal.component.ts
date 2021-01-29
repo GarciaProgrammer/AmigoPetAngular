@@ -36,9 +36,7 @@ export class AnimalComponent implements OnInit {
   }
 
   atualizar(){
-    this.animalServico.alterarCadAnimal(this.id, this.animal){
+    this.animalServico.alterarCadAnimal(this.id, this.animal);
       this.id = -1;
     }
   }
-
-}

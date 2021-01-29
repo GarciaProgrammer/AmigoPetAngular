@@ -4,7 +4,7 @@ export interface Animal {
      nomeAnimal?: string;
      especieAnimal?: string;
      racaAnimal?: string;
-     idade?: number;
+     idade?: number; 
      porteAnimal?: string;
      sexo?: string;
      descricao?: string;
