@@ -1,7 +1,7 @@
 import { Cidade } from './../beans/Cidade';
 import { EstadoService } from './../services/estado.service';
 import { Component, OnInit } from '@angular/core';
-import { Estado } from '../beans/estado';
+import { Estado } from '../beans/Estado';
 import { Observable } from 'rxjs';
 
 @Component({

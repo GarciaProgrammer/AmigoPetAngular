@@ -1,23 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-dark" id="idNav">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Amigo Pet</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active mx-2" aria-current="page" routerLink="#" id="opcoesMenu">Dicas </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active mx-2" aria-current="page" routerLink="#" id="opcoesMenu">Ongs Parceiras </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li> <i class="fas fa-user" id="iconUser"></i>
-        </li>
-      </ul>
-    </div>
+<nav class="navbar navbar-expand-md">
+  <span class="navbar-brand">AmigoPet</span>
+  <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
+    <ul class="navbar-nav ml-auto">
+
+      <li class="nav-item">
+        <a tabindex="0" id="navbarDropdown2" role="button">
+          Meus
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a tabindex="0" id="navbarDropdown2" role="button">
+          Sobre
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a tabindex="0" id="navbarDropdown2" role="button">
+          Dicas
+        </a>
+      </li>
+
+      <li class="nav-item" ngbDropdown display="dynamic">
+          <a tabindex="0" ngbDropdownToggle  role="button"><i class="far fa-user"></i></a>
+        <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
+          <span><a ngbDropdownItem >Doar</a></span>
+          <a ngbDropdownItem >Adotados</a>
+          <a ngbDropdownItem >Doados</a>
+        </div>
+      </li>
+    </ul>
   </div>
 </nav>

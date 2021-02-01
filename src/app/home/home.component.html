@@ -1,3 +1,4 @@
+<app-filtro></app-filtro>
 <div class="container-fluid" id="teste">
   <div class="row-fluid">
     <button id="cadAnimal"> Cadastrar animal</button>
@@ -12,7 +13,7 @@
         <option>Selecione</option>
         <option *ngFor="let estado of estados | async" value="{{estado.id}}">
           {{estado.nome}}</option>
-          
+
       </select>
       <label for="cidade"> Selecione uma cidade</label>
       <select id="cidade">
@@ -38,10 +39,3 @@
     </form>
   </div>
 </div>
-
-<h1>Listagem de estados e cidades</h1>
-<ul>
-  <li></li>
-</ul>
-
-<app-animal></app-animal>

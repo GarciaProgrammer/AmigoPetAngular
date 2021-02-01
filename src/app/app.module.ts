@@ -12,6 +12,9 @@ import { LoginComponent } from './login/login.component';
 import { AnimalComponent } from './animal/animal.component';
 import { FormsModule } from '@angular/forms';
 import { EstadoService } from './services/estado.service';
+import { CadastroComponent } from './cadastro/cadastro.component';
+import { CadAnimalComponent } from './cad-animal/cad-animal.component';
+import { FiltroComponent } from './filtro/filtro.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { EstadoService } from './services/estado.service';
     HomeComponent,
     FooterComponent,
     LoginComponent,
-    AnimalComponent
+    AnimalComponent,
+    CadastroComponent,
+    CadAnimalComponent,
+    FiltroComponent
   ],
   imports: [
     BrowserModule,
