@@ -9,9 +9,13 @@ import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
+<<<<<<< HEAD
+import { FiltroComponent } from './filtro/filtro.component';
+=======
 import { AnimalComponent } from './animal/animal.component';
 import { FormsModule } from '@angular/forms';
 import { EstadoService } from './services/estado.service';
+>>>>>>> 44a3ac911d01a27abc0f89659affb7b4a25982f7
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { EstadoService } from './services/estado.service';
     HomeComponent,
     FooterComponent,
     LoginComponent,
+<<<<<<< HEAD
+    FiltroComponent
+=======
     AnimalComponent
+>>>>>>> 44a3ac911d01a27abc0f89659affb7b4a25982f7
   ],
   imports: [
     BrowserModule,

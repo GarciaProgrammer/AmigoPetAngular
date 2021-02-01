@@ -1,8 +1,26 @@
-#idNav {
-  background-color: #e2b144;
+nav {
+  background-color: white;
+  color: black;
 }
 
-#opcoesMenu {
-  font-size: 20px;
+.navbar-brand {
+  color: #e2b144;
+  font-size: 25px;
 }
 
+a{
+  color: black;
+  margin-left: 30px;
+}
+
+a:hover {
+  transition: all .2s ease-out;
+  border-bottom: 4px solid 	#008080;
+  color: #e2b144 !important;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.dropdown-item {
+  width: 65% !important;
+}
