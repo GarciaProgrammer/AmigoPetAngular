@@ -8,10 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
 
   collapsed = true;
-<<<<<<< HEAD
-=======
-
->>>>>>> 48c87251ae1c5a6280c4505c4063bf2950c64c8c
   constructor() { }
 
   ngOnInit(): void {

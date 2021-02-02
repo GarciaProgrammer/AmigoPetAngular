@@ -9,11 +9,9 @@ import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
-import { AnimalComponent } from './animal/animal.component';
 import { FormsModule } from '@angular/forms';
 import { EstadoService } from './services/estado.service';
 import { CadastroComponent } from './cadastro/cadastro.component';
-import { CadAnimalComponent } from './cad-animal/cad-animal.component';
 import { FiltroComponent } from './filtro/filtro.component';
 
 @NgModule({
@@ -23,9 +21,7 @@ import { FiltroComponent } from './filtro/filtro.component';
     HomeComponent,
     FooterComponent,
     LoginComponent,
-    AnimalComponent,
     CadastroComponent,
-    CadAnimalComponent,
     FiltroComponent
   ],
   imports: [
