@@ -27,7 +27,10 @@ export class FiltroComponent implements OnInit {
   }
 
   buscarCidade(){
-
+    this.cidades = this.estadoServico.buscarCidade(this.idEstadoSelecionado);
+    this.cidades.subscribe(
+      response => console.log(response)
+    );
   }
 
 }
