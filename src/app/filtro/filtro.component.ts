@@ -25,6 +25,7 @@ export class FiltroComponent implements OnInit {
     this.estados = this.estadoServico.buscarEstados();
   }
 
+
   buscarCidade() {
     this.cidades = this.estadoServico.buscarCidade(this.idEstadoSelecionado);
     this.cidades.subscribe(

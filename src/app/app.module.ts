@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { EstadoService } from './services/estado.service';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { FiltroComponent } from './filtro/filtro.component';
+import { AddDicaComponent } from './add-dica/add-dica.component';
+import { ListDicaComponent } from './list-dica/list-dica.component';
 import { VisualizarAnimalComponent } from './visualizar-animal/visualizar-animal.component';
 
 @NgModule({
@@ -23,7 +25,10 @@ import { VisualizarAnimalComponent } from './visualizar-animal/visualizar-animal
     FooterComponent,
     LoginComponent,
     CadastroComponent,
+    CadAnimalComponent,
     FiltroComponent,
+    AddDicaComponent,
+    ListDicaComponent,
     VisualizarAnimalComponent
   ],
   imports: [
