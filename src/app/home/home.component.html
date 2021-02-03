@@ -3,97 +3,13 @@
 <div class="container-fluid">
   <div class="container" id="principal">
 
-    <a href="#">
+    <a href="/visualizar" *ngFor="let animal of animais">
       <div class="card" style="width: 18rem;" id="grow">
         <img src="../../assets/gatoindex.jpg" class="card-img-top">
         <div class="card-body">
-          <h5 class="card-title">Beni</h5>
-          <p class="card-text">Especie: Gato</p>
-          <p class="card-text">Sexo: Macho</p>
-          <button class="grow_skew_forward">Visualizar</button>
-        </div>
-      </div>
-    </a>
-
-    <a href="#">
-      <div class="card" style="width: 18rem;" id="grow">
-        <img src="../../assets/gatoindex.jpg" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Beni</h5>
-          <p class="card-text">Especie: Gato</p>
-          <p class="card-text">Sexo: Macho</p>
-          <button class="grow_skew_forward">Visualizar</button>
-        </div>
-      </div>
-    </a>
-
-    <a href="#">
-      <div class="card" style="width: 18rem;" id="grow">
-        <img src="../../assets/gatoindex.jpg" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Beni</h5>
-          <p class="card-text">Especie: Gato</p>
-          <p class="card-text">Sexo: Macho</p>
-          <button class="grow_skew_forward">Visualizar</button>
-        </div>
-      </div>
-    </a>
-
-    <a href="#">
-      <div class="card" style="width: 18rem;" id="grow">
-        <img src="../../assets/gatoindex.jpg" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Beni</h5>
-          <p class="card-text">Especie: Gato</p>
-          <p class="card-text">Sexo: Macho</p>
-          <button class="grow_skew_forward">Visualizar</button>
-        </div>
-      </div>
-    </a>
-
-    <a href="#">
-      <div class="card" style="width: 18rem;" id="grow">
-        <img src="../../assets/gatoindex.jpg" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Beni</h5>
-          <p class="card-text">Especie: Gato</p>
-          <p class="card-text">Sexo: Macho</p>
-          <button class="grow_skew_forward">Visualizar</button>
-        </div>
-      </div>
-    </a>
-
-    <a href="#">
-      <div class="card" style="width: 18rem;" id="grow">
-        <img src="../../assets/gatoindex.jpg" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Beni</h5>
-          <p class="card-text">Especie: Gato</p>
-          <p class="card-text">Sexo: Macho</p>
-          <button class="grow_skew_forward">Visualizar</button>
-        </div>
-      </div>
-    </a>
-
-    <a href="#">
-      <div class="card" style="width: 18rem;" id="grow">
-        <img src="../../assets/gatoindex.jpg" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Beni</h5>
-          <p class="card-text">Especie: Gato</p>
-          <p class="card-text">Sexo: Macho</p>
-          <button class="grow_skew_forward">Visualizar</button>
-        </div>
-      </div>
-    </a>
-
-    <a href="#">
-      <div class="card" style="width: 18rem;" id="grow">
-        <img src="../../assets/gatoindex.jpg" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Beni</h5>
-          <p class="card-text">Especie: Gato</p>
-          <p class="card-text">Sexo: Macho</p>
+          <h5 class="card-title">{{animal.nome}}</h5>
+          <p class="card-text">Sexo: {{animal.sexo}}</p>
+          <p class="card-text">Porte: {{animal.porte}}</p>
           <button class="grow_skew_forward">Visualizar</button>
         </div>
       </div>
@@ -101,5 +17,3 @@
 
   </div>
 </div>
-=======
-<app-filtro></app-filtro>

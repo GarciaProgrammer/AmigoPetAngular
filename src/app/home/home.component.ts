@@ -13,27 +13,14 @@ export class HomeComponent implements OnInit {
 
   constructor(private estadoService: EstadoService) { }
 
-  estados: Observable<Estado[]> = new Observable();
-  cidades: Observable<Cidade[]> = new Observable();
-  idEstadoSelecionado:number = 0;
-
   ngOnInit(): void {
-    this.buscar();
-    this.estados.subscribe(
-      response => console.log(response)
-    );
   }
 
-  buscar() {
-    this.estados = this.estadoService.buscarEstados();
-  }
-
-  buscarCidade() {
-    this.cidades = this.estadoService.buscarCidade(this.idEstadoSelecionado);
-    this.cidades.subscribe(
-      response => console.log(response)
-    );
-  }
+  public animais = [
+    { nome: 'Gab', sexo: 'Masculino', porte: 'pequeno', especie: 'Dog'},
+    { nome: 'Gab', sexo: 'Masculino', porte: 'pequeno', especie: 'Dog'},
+    { nome: 'Gab', sexo: 'Masculino', porte: 'pequeno', especie: 'Dog'}
+  ]
 
   images = ["../../assets/dogao.jpg", "../../assets/gatao.jpg", "../../assets/dogao2.jpg"];
 }
