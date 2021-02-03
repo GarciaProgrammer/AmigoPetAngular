@@ -1,6 +1,6 @@
 import { EstadoService } from './../services/estado.service';
 import { Estado } from './../beans/Estado';
-import { Observable } from 'rxjs';
+import { Observable, Subscriber } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Cidade } from '../beans/Cidade';
 
@@ -13,23 +13,23 @@ export class FiltroComponent implements OnInit {
 
   constructor(private estadoServico: EstadoService) { }
 
-  estados:Observable<Estado[]> = new Observable();
-  cidades:Observable<Cidade[]> = new Observable();
-  idEstadoSelecionado:number = 0;
-
+  estados: Observable<Estado[]> = new Observable();
+  cidades: Observable<Cidade[]> = new Observable();
+  idEstadoSelecionado: number = 0;
 
   ngOnInit(): void {
-
+    this.buscar();
   }
 
-  buscar(){
+  buscar() {
     this.estados = this.estadoServico.buscarEstados();
   }
 
-  buscarCidade(){
+
+  buscarCidade() {
     this.cidades = this.estadoServico.buscarCidade(this.idEstadoSelecionado);
     this.cidades.subscribe(
-      response => console.log(response)
+      resolve => console.log(resolve)
     );
   }
 

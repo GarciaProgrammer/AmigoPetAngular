@@ -9,14 +9,13 @@ import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
-import { AnimalComponent } from './animal/animal.component';
 import { FormsModule } from '@angular/forms';
 import { EstadoService } from './services/estado.service';
 import { CadastroComponent } from './cadastro/cadastro.component';
-import { CadAnimalComponent } from './cad-animal/cad-animal.component';
 import { FiltroComponent } from './filtro/filtro.component';
 import { AddDicaComponent } from './add-dica/add-dica.component';
 import { ListDicaComponent } from './list-dica/list-dica.component';
+import { VisualizarAnimalComponent } from './visualizar-animal/visualizar-animal.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +24,12 @@ import { ListDicaComponent } from './list-dica/list-dica.component';
     HomeComponent,
     FooterComponent,
     LoginComponent,
-    AnimalComponent,
     CadastroComponent,
     CadAnimalComponent,
     FiltroComponent,
     AddDicaComponent,
-    ListDicaComponent
+    ListDicaComponent,
+    VisualizarAnimalComponent
   ],
   imports: [
     BrowserModule,
