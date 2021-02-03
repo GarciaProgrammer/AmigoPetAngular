@@ -25,7 +25,6 @@ import { VisualizarAnimalComponent } from './visualizar-animal/visualizar-animal
     FooterComponent,
     LoginComponent,
     CadastroComponent,
-    CadAnimalComponent,
     FiltroComponent,
     AddDicaComponent,
     ListDicaComponent,
