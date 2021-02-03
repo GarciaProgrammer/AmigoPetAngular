@@ -16,7 +16,7 @@
                             <div class="row">
                                 <label for="estado"> Selecione um estado</label>
                                 <select name="estado" [(ngModel)]="idEstadoSelecionado"(change)="buscarCidade()">
-                                    <option> Selecione</option>
+                                    <option value="0"> Selecione</option>
                                     <option *ngFor="let estado of estados | async" value="{{estado.id}}">{{estado.nome}}
                                     </option>
                                 </select>
