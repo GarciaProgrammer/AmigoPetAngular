@@ -1,17 +1,13 @@
 <nav class="navbar navbar-expand-md">
+  <img src="../../assets/logo.jpg" id="logo" alt="">
   <span class="navbar-brand">AmigoPet</span>
-  <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
+  <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed"
+    aria-label="Toggle navigation" (click)="collapsed = !collapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
     <ul class="navbar-nav ml-auto">
-
-      <li class="nav-item">
-        <a tabindex="0" id="navbarDropdown2" role="button">
-          Meus
-        </a>
-      </li>
 
       <li class="nav-item">
         <a tabindex="0" id="navbarDropdown2" role="button">
@@ -25,12 +21,18 @@
         </a>
       </li>
 
+      <li class="nav-item">
+        <a tabindex="0" id="navbarDropdown2" role="button">
+          Ongs
+        </a>
+      </li>
+
       <li class="nav-item" ngbDropdown display="dynamic">
-          <a tabindex="0" ngbDropdownToggle  role="button"><i class="far fa-user"></i></a>
+        <a tabindex="0" ngbDropdownToggle role="button"><i class="far fa-user"></i></a>
         <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
-          <span><a ngbDropdownItem >Doar</a></span>
-          <a ngbDropdownItem >Adotados</a>
-          <a ngbDropdownItem >Doados</a>
+          <span><a ngbDropdownItem>Meu perfil</a></span>
+          <span><a ngbDropdownItem>Doar</a></span>
+          <a ngbDropdownItem>Pets</a>
         </div>
       </li>
     </ul>

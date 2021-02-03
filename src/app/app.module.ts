@@ -15,6 +15,8 @@ import { EstadoService } from './services/estado.service';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { CadAnimalComponent } from './cad-animal/cad-animal.component';
 import { FiltroComponent } from './filtro/filtro.component';
+import { AddDicaComponent } from './add-dica/add-dica.component';
+import { ListDicaComponent } from './list-dica/list-dica.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { FiltroComponent } from './filtro/filtro.component';
     AnimalComponent,
     CadastroComponent,
     CadAnimalComponent,
-    FiltroComponent
+    FiltroComponent,
+    AddDicaComponent,
+    ListDicaComponent
   ],
   imports: [
     BrowserModule,

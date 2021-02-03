@@ -1,8 +1,7 @@
 * {
-    font-family: 'Cambria';
-    font-size: 17px;
-  }
-  
+  font-family: "Cambria";
+  font-size: 17px;
+}
 
 #divFiltro label {
   width: 100%;
@@ -16,12 +15,12 @@ select {
 }
 
 select:hover {
-    transition: all .2s ease-out;
-    border: 0px !important;
-    border-bottom: 4px solid 	#008080 !important;
-    color: #38440b !important;
-    font-weight: 600;
-    font-size: 17px !important;
+  transition: all 0.2s ease-out;
+  border: 0px !important;
+  border-bottom: 4px solid #008080 !important;
+  color: #38440b !important;
+  font-weight: 600;
+  font-size: 17px !important;
 }
 
 h3 {
@@ -30,7 +29,7 @@ h3 {
   color: rgb(11, 68, 49);
   font-weight: 600;
   font-size: 25px !important;
-  font-family: 'Courier New'!important;
+  font-family: "Courier New" !important;
 }
 
 #colunaUm {
@@ -45,12 +44,12 @@ h3 {
 }
 
 #colCad {
-    text-align: right;
-    margin-top: 10px;
+  text-align: right;
+  margin-top: 10px;
 }
 
 #colCad p {
-  font-family: 'Courier New' !important;
+  font-family: "Courier New" !important;
   font-size: 23px !important;
 }
 
