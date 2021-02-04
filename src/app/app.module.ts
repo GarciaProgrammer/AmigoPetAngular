@@ -15,6 +15,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { FiltroComponent } from './filtro/filtro.component';
 import { AddDicaComponent } from './add-dica/add-dica.component';
 import { ListDicaComponent } from './list-dica/list-dica.component';
+import { PetsComponent } from './pets/pets.component';
+import { VerdicaComponent } from './verdica/verdica.component';
 import { VisualizarAnimalComponent } from './visualizar-animal/visualizar-animal.component';
 
 @NgModule({
@@ -28,6 +30,8 @@ import { VisualizarAnimalComponent } from './visualizar-animal/visualizar-animal
     FiltroComponent,
     AddDicaComponent,
     ListDicaComponent,
+    PetsComponent,
+    VerdicaComponent,
     VisualizarAnimalComponent
   ],
   imports: [

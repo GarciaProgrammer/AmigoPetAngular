@@ -1,14 +1,8 @@
 <nav class="navbar navbar-expand-md">
-  <img routerLink="/home" src="../../assets/logo.jpg" id="logo" alt="" />
-  <span class="navbar-brand">AmigoPet</span>
-  <button
-    class="navbar-toggler"
-    type="button"
-    aria-controls="navbarContent"
-    [attr.aria-expanded]="!collapsed"
-    aria-label="Toggle navigation"
-    (click)="collapsed = !collapsed"
-  >
+  <span href="#"><img src="../../assets/logocerta3.png" id="logo" alt="AmigoPet"></span>
+  <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed"
+    aria-label="Toggle navigation" (click)="collapsed = !collapsed">
+
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -19,7 +13,9 @@
       </li>
 
       <li class="nav-item">
-        <a tabindex="0" id="navbarDropdown2" role="button"> Dicas </a>
+        <a tabindex="0" routerLink="/listdicas" id="navbarDropdown2" role="button">
+          Dicas
+        </a>
       </li>
 
       <li class="nav-item">
@@ -37,7 +33,7 @@
         >
           <span><a ngbDropdownItem>Meu perfil</a></span>
           <span><a ngbDropdownItem>Doar</a></span>
-          <a ngbDropdownItem>Pets</a>
+          <span><a ngbDropdownItem>Pets</a></span>
         </div>
       </li>
     </ul>
