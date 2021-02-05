@@ -21,6 +21,7 @@ import { VisualizarAnimalComponent } from './visualizar-animal/visualizar-animal
 import { ListOngComponent } from './list-ong/list-ong.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { CadastroAnimalComponent } from './cadastro-animal/cadastro-animal.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SobreComponent } from './sobre/sobre.component';
     VisualizarAnimalComponent,
     ListOngComponent,
     PerfilUsuarioComponent,
-    SobreComponent
+    SobreComponent,
+    CadastroAnimalComponent
   ],
   imports: [
     BrowserModule,
