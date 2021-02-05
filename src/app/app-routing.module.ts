@@ -8,6 +8,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddDicaComponent } from './add-dica/add-dica.component';
 import { ListDicaComponent } from './list-dica/list-dica.component';
 import { VerdicaComponent } from './verdica/verdica.component';
+import { PetsComponent } from './pets/pets.component';
+import { ListOngComponent } from './list-ong/list-ong.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { SobreComponent } from './sobre/sobre.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -18,6 +22,10 @@ const routes: Routes = [
   { path: 'novadica', component: AddDicaComponent},
   { path: 'verdica', component: VerdicaComponent},
   { path: 'visualizar', component: VisualizarAnimalComponent},
+  { path: 'pets', component: PetsComponent},
+  { path: 'listong', component: ListOngComponent},
+  { path: 'meuperfil', component: PerfilUsuarioComponent},
+  { path: 'sobre', component: SobreComponent},
   { path: 'cadastroAnimal', component: CadastroAnimalComponent}
 ];
 
