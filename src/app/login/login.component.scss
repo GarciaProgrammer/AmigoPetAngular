@@ -4,10 +4,19 @@ body {
 	min-height: 100vh;
 }
 
+#principal {
+    border-top: 4px solid  #e2b144;
+    margin-top: 0px !important;
+}
+
 .brand-wrapper {
 	margin-bottom: 19px;
 }
 
+.card {
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
 
 .login-card {
 	border: 0;

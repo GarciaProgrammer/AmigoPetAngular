@@ -18,6 +18,9 @@ import { ListDicaComponent } from './list-dica/list-dica.component';
 import { PetsComponent } from './pets/pets.component';
 import { VerdicaComponent } from './verdica/verdica.component';
 import { VisualizarAnimalComponent } from './visualizar-animal/visualizar-animal.component';
+import { ListOngComponent } from './list-ong/list-ong.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { SobreComponent } from './sobre/sobre.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { VisualizarAnimalComponent } from './visualizar-animal/visualizar-animal
     ListDicaComponent,
     PetsComponent,
     VerdicaComponent,
-    VisualizarAnimalComponent
+    VisualizarAnimalComponent,
+    ListOngComponent,
+    PerfilUsuarioComponent,
+    SobreComponent
   ],
   imports: [
     BrowserModule,
