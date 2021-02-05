@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="card cadastro-card">
+        <div class="row no-gutters">
+            <div class="col-md-5">
+                <img src="../../assets/papagaio.jpg" alt="cadastro" class="cadastro-card-img">
+            </div>
+            <div class="col-md-7">
+                <div class="card-body">
+                    <p class="cadastro-card-description">Cadastre um animal</p>
+                    <form action="cadastro" method="post">
+                        <div class="form-group">
+                            <label for="text" class="sr-only">Nome</label>
+                            <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome">
+                        </div>
+                        <div>
+                            <label for="Especie" class="sr-only">Espécie</label>
+                            <input type="text" name="Especie" id="especie" class="form-control" placeholder="Especie">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="raca" class="sr-only">Raça</label>
+                            <input type="text" name="raca" id="raca" class="form-control" placeholder="Raça">
+                        </div>
+                        <div>
+                            <label for="idade" class="sr-only">Idade</label>
+                            <input type="number" name="idade" id="idade" class="form-control" placeholder="idade">
+                        </div>
+                        <div>
+                            <label for="descricao" class="sr-only">Descrição</label>
+                            <input type="text" name="descricao" id="descricao" class="form-control"
+                                placeholder="descricao">
+                        </div>
+                        <div>
+                            <select name="estado"  [(ngModel)]="idEstadoSelecionado" (change)="buscarCidade()"
+                                class="selects">
+                                <option value="0"> Selecione</option>
+                                <option *ngFor="let estado of estados | async" value="{{estado.id}}">{{estado.nome}}
+                                </option>
+                            </select>
+                        </div>
+                        <div>
+                            <select name="cidade" class="selects">
+                                <option> Selecione</option>
+                                <option *ngFor="let cidade of cidades |async" value="{{cidade.id}}">{{cidade.nome}}
+                                </option>
+                            </select>
+                        </div>
+                        <input type="submit" id="cadastro" class="btn btn-block cadastro-btn mb-4" type="button"
+                            value="cadastro">
+                    </form>
+                    <p class="cadastro-card-footer-text"> Clique <a routerLink="/home" class="text-reset"> aqui</a>
+                        para voltar</p>
+                    <nav class="cadastro-card-footer-nav">
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

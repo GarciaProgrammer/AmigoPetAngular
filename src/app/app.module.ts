@@ -18,6 +18,7 @@ import { ListDicaComponent } from './list-dica/list-dica.component';
 import { PetsComponent } from './pets/pets.component';
 import { VerdicaComponent } from './verdica/verdica.component';
 import { VisualizarAnimalComponent } from './visualizar-animal/visualizar-animal.component';
+import { CadastroAnimalComponent } from './cadastro-animal/cadastro-animal.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { VisualizarAnimalComponent } from './visualizar-animal/visualizar-animal
     ListDicaComponent,
     PetsComponent,
     VerdicaComponent,
-    VisualizarAnimalComponent
+    VisualizarAnimalComponent,
+    CadastroAnimalComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { CadastroAnimalComponent } from './cadastro-animal/cadastro-animal.component';
 import { VisualizarAnimalComponent } from './visualizar-animal/visualizar-animal.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'listdicas', component: ListDicaComponent},
   { path: 'novadica', component: AddDicaComponent},
   { path: 'verdica', component: VerdicaComponent},
-  { path: 'visualizar', component: VisualizarAnimalComponent}
+  { path: 'visualizar', component: VisualizarAnimalComponent},
+  { path: 'cadastroAnimal', component: CadastroAnimalComponent}
 ];
 
 @NgModule({
