@@ -1,7 +1,7 @@
-import { Cidade } from './../beans/Cidade';
+import { Animal } from './../beans/Animal';
+import { AnimalService } from './../services/animal.service';
 import { EstadoService } from './../services/estado.service';
 import { Component, OnInit } from '@angular/core';
-import { Estado } from '../beans/Estado';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -11,16 +11,18 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private estadoService: EstadoService) { }
+  animais: Observable<Animal[]> = new Observable();
+
+  constructor(private estadoService: EstadoService, private animalServico: AnimalService) { }
 
   ngOnInit(): void {
+    this.getAllAnimais();
   }
 
-  public animais = [
-    { nome: 'Gab', sexo: 'Masculino', porte: 'pequeno', especie: 'Dog'},
-    { nome: 'Gab', sexo: 'Masculino', porte: 'pequeno', especie: 'Dog'},
-    { nome: 'Gab', sexo: 'Masculino', porte: 'pequeno', especie: 'Dog'}
-  ]
-
-  images = ["../../assets/dogao.jpg", "../../assets/gatao.jpg", "../../assets/dogao2.jpg"];
+  getAllAnimais() {
+    this.animais = this.animalServico.listarAnimais();
+    this.animais.subscribe(
+      resolve => console.log(resolve)
+    );
+  }
 }
