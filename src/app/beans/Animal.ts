@@ -1,7 +1,7 @@
 export class Animal {
 
     nome?:string;
-    timeAgo?:string;
+    tipo?:string;
     raca?:string;
     idade?:string;
     descricao?:string;

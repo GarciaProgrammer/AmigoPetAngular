@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   animais: Observable<Animal[]> = new Observable();
 
-  constructor(private estadoService: EstadoService, private animalServico: AnimalService) { }
+  constructor(private animalServico: AnimalService) { }
 
   ngOnInit(): void {
     this.getAllAnimais();
@@ -25,4 +25,5 @@ export class HomeComponent implements OnInit {
       resolve => console.log(resolve)
     );
   }
+
 }
