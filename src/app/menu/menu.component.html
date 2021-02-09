@@ -1,27 +1,20 @@
 <nav class="navbar navbar-expand-md">
-  <span routerLink="/home"
-    ><img src="../../assets/logocerta3.png" id="logo" alt="AmigoPet"
-  /></span>
-  <button
-    class="navbar-toggler"
-    type="button"
-    aria-controls="navbarContent"
-    [attr.aria-expanded]="!collapsed"
-    aria-label="Toggle navigation"
-    (click)="collapsed = !collapsed"
-  >
+  <span routerLink='/home' style="cursor: pointer;"><img src="../../assets/logocerta3.png" id="logo" alt="AmigoPet"></span>
+  <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed"
+    aria-label="Toggle navigation" (click)="collapsed = !collapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a
-          tabindex="0"
-          routerLink="/listdicas"
-          id="navbarDropdown2"
-          role="button"
-        >
+        <a tabindex="0" routerLink="/cadastroAnimal" id="navbarDropdown2" role="button">
+          Doar Pet
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a tabindex="0" routerLink="/listdicas" id="navbarDropdown2" role="button">
           Dicas
         </a>
       </li>
@@ -53,7 +46,7 @@
           class="dropdown-menu"
         >
           <span><a routerLink="/meuperfil" ngbDropdownItem>Meu perfil</a></span>
-          <span><a ngbDropdownItem>Doar</a></span>
+          <span><a routerLink="/cadastroAnimal" ngbDropdownItem>Doar</a></span>
           <span><a routerLink="/pets" ngbDropdownItem>Pets</a></span>
         </div>
       </li>

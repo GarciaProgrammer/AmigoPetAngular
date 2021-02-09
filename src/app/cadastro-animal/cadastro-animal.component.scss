@@ -4,6 +4,11 @@ body {
   min-height: 100vh;
 }
 
+#principal {
+    border-top: 4px solid  #e2b144;
+    margin-top: 0px !important;
+}
+
 .brand-wrapper {
   margin-bottom: 19px;
 }
@@ -114,4 +119,9 @@ body {
   margin-bottom: 25px;
   border-radius: 7px;
   padding: 6px;
+}
+
+.container {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
