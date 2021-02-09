@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VisualizarAnimalComponent implements OnInit {
 
-  teste:string = '';
+  wpp?:string;
 
   constructor(private servico:WhatssappService) {
 
@@ -21,8 +21,7 @@ export class VisualizarAnimalComponent implements OnInit {
   }
 
   criarLink(){
-    this.teste = this.servico.criarLink(47992201803);
-    console.log(this.teste);
+    this.wpp = this.servico.criarLink(47992201803);
 
   }
 
