@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "amigoPet"
+  "defaultProject": "amigoPet",
+  "cli": {
+    "analytics": "b14aaa92-b61f-498c-8eea-b73eb9356090"
+  }
 }

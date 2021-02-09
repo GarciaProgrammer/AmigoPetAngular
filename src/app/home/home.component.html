@@ -3,7 +3,7 @@
 <div class="container-fluid">
   <div class="container" id="principal">
 
-    <a href="/visualizar" *ngFor="let animal of animais">
+    <a href="/visualizar" *ngFor="let animal of animais | async">
       <div class="card" style="width: 18rem;" id="grow">
         <img src="../../assets/gatoindex.jpg" class="card-img-top">
         <div class="card-body">
