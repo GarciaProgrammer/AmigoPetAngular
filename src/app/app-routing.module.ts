@@ -12,6 +12,9 @@ import { PetsComponent } from './pets/pets.component';
 import { ListOngComponent } from './list-ong/list-ong.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { EditarDicaComponent } from './editar-dica/editar-dica.component';
+import { CadastrarDicaComponent } from './cadastrar-dica/cadastrar-dica.component';
+import { EditAnimalComponent } from './edit-animal/edit-animal.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -26,7 +29,10 @@ const routes: Routes = [
   { path: 'listong', component: ListOngComponent},
   { path: 'meuperfil', component: PerfilUsuarioComponent},
   { path: 'sobre', component: SobreComponent},
-  { path: 'cadastroAnimal', component: CadastroAnimalComponent}
+  { path: 'cadastroAnimal', component: CadastroAnimalComponent},
+  { path: 'cadastrardica', component: CadastrarDicaComponent},
+  { path: 'editardica', component: EditarDicaComponent}, 
+  { path: 'editarpet', component: EditAnimalComponent}
 ];
 
 @NgModule({

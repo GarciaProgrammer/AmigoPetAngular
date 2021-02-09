@@ -22,6 +22,9 @@ import { ListOngComponent } from './list-ong/list-ong.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { CadastroAnimalComponent } from './cadastro-animal/cadastro-animal.component';
+import { EditarDicaComponent } from './editar-dica/editar-dica.component';
+import { CadastrarDicaComponent } from './cadastrar-dica/cadastrar-dica.component';
+import { EditAnimalComponent } from './edit-animal/edit-animal.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { CadastroAnimalComponent } from './cadastro-animal/cadastro-animal.compo
     ListOngComponent,
     PerfilUsuarioComponent,
     SobreComponent,
-    CadastroAnimalComponent
+    CadastroAnimalComponent,
+    EditarDicaComponent,
+    CadastrarDicaComponent,
+    EditAnimalComponent
   ],
   imports: [
     BrowserModule,

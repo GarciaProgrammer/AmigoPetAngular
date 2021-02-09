@@ -1,5 +1,6 @@
 <div class="container-fluid" id="principal">
     <div class="container">
+        
         <div class="card login-card">
             <div class="row no-gutters">
                 <div class="col-md-12">
@@ -8,7 +9,7 @@
                         <div class="container">
                             <div class="row mb-4">
                                 <div class="col-md-4">
-                                    <button class="slide_from_left" id="add"><strong>+</strong>Add Dica</button>
+                                    <button routerLink="/cadastrardica" class="slide_from_left" id="add"><strong>+</strong>Add Dica</button>
                                 </div>
                                 <div class="col-md-8">
                                     <h1><strong>Editar Dicas</strong></h1>
@@ -24,12 +25,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr routerLink="/listdicas">
                                         <th scope="row">1</th>
                                         <td>O que não ...</td>
                                         <td>Lorem, ipsum dolor sit amet consectetur ...</td>
                                         <td>
-                                            <button class="slide_from_left" id="editar">Editar</button>
+                                            <button routerLink="/editardica" class="slide_from_left"
+                                                id="editar">Editar</button>
                                             <button class="slide_from_left" id="excluir">Excluir</button>
                                         </td>
                                     </tr>
