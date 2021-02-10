@@ -40,14 +40,14 @@
                                 </select>
                             </div>
                             <div>
-                                <select name="cidade" class="selects">
+                                <select name="cidade"  [(ngModel)]="idCidadeSelecionada" class="selects">
                                     <option> Selecione</option>
-                                    <option *ngFor="let cidade of cidades |async" value="{{cidade.id}}">{{cidade.nome}}
+                                    <option *ngFor="let cidade of cidades | async" value="{{cidade.id}}">{{cidade.nome}}
                                     </option>
                                 </select>
                             </div>
-                            <input type="submit" id="cadastro" class="btn btn-block cadastro-btn mb-4" type="button"
-                                value="cadastro">
+                            <button (click)="salvar()" class="btn btn-primary">Cadastrar</button>
+                            
                         </form>
                         <p class="cadastro-card-footer-text"> Clique <a routerLink="/home" class="text-reset"> aqui</a>
                             para voltar</p>

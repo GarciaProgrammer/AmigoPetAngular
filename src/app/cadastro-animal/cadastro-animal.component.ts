@@ -14,25 +14,26 @@ import { Cidade } from '../beans/Cidade';
 export class CadastroAnimalComponent implements OnInit {
 
   uri = 'localhost:8080/animal/';
-
   estados: Observable<Estado[]> = new Observable();
   cidades: Observable<Cidade[]> = new Observable();
-  idEstadoSelecionado: number = 0;
+  idEstadoSelecionado?: string = '0';
+  idCidadeSelecionada?: string = '0';
   cidadeNome?: string = '0';
   animais?: Animal[];
   animal: Animal = {};
+
   constructor(private estadoServico: EstadoService, private animalServico: AnimalService) { }
 
   ngOnInit(): void {
     this.buscar();
-    this.animalServico.listarAnimais()
-      .subscribe(data => console.log(data)
-      );
+    // this.animalServico.listarAnimais()
+    //   .subscribe(data => console.log(data)
+    //   );
   }
 
   buscar() {
-    this.estados = this.estadoServico.buscarEstados()
-      this.estados.subscribe(resolve => console.log(resolve)
+    this.estados = this.estadoServico.buscarEstados();
+    this.estados.subscribe(resolve => console.log(resolve)
     );
   }
 
