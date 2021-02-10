@@ -1,5 +1,5 @@
 export interface Estado{
 
-    id?:number;
+    id?:string;
     nome?:string;
 }
