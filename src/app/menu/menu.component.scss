@@ -30,3 +30,18 @@ a:hover {
 .dropdown-item {
   width: 65% !important;
 }
+
+#btnCadastro {
+  color: white;
+  background-color: green;
+  padding: 5px 10px 5px 10px;
+  transition: 1.5s;
+  font-weight: 600;
+}
+
+#btnCadastro:hover {
+  background-color: rgb(27, 143, 151);
+  text-decoration: none !important;
+  color: black !important;
+  border-bottom: 4px solid black;
+}
