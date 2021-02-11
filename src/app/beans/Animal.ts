@@ -10,5 +10,5 @@ export class Animal {
     sexo?:string;
     porte?:string;
     status?:string;
-
+    foto?: File;
 }

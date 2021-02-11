@@ -15,7 +15,7 @@ export class FiltroComponent implements OnInit {
 
   estados: Observable<Estado[]> = new Observable();
   cidades: Observable<Cidade[]> = new Observable();
-  idEstadoSelecionado: number = 0;
+  idEstadoSelecionado: string = '0';
 
   ngOnInit(): void {
     this.buscar();

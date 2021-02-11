@@ -11,25 +11,33 @@
                         <form action="cadastro" method="post">
                             <div class="form-group">
                                 <label for="text" class="sr-only">Nome</label>
-                                <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome">
+                                <input type="text" name="nome" id="nome" [(ngModel)]="animal.nome" class="form-control"
+                                    placeholder="Nome">
                             </div>
                             <div>
                                 <label for="Especie" class="sr-only">Espécie</label>
                                 <input type="text" name="Especie" id="especie" class="form-control"
-                                    placeholder="Especie">
+                                    placeholder="Especie" [(ngModel)]="animal.tipo">
                             </div>
                             <div class="form-group mb-4">
                                 <label for="raca" class="sr-only">Raça</label>
-                                <input type="text" name="raca" id="raca" class="form-control" placeholder="Raça">
+                                <input type="text" name="raca" id="raca" [(ngModel)]="animal.raca" class="form-control"
+                                    placeholder="Raça">
                             </div>
                             <div>
                                 <label for="idade" class="sr-only">Idade</label>
-                                <input type="number" name="idade" id="idade" class="form-control" placeholder="idade">
+                                <input type="number" name="idade" id="idade" class="form-control"
+                                    [(ngModel)]="animal.idade" placeholder="idade">
                             </div>
                             <div>
                                 <label for="descricao" class="sr-only">Descrição</label>
-                                <input type="text" name="descricao" id="descricao" class="form-control"
-                                    placeholder="descricao">
+                                <input type="text" name="descricao" id="descricao" [(ngModel)]="animal.descricao"
+                                    class="form-control" placeholder="descricao">
+                            </div>
+                            <div>
+                                <label for="porte" class="sr-only">Porte</label>
+                                <input type="text" name="porte" id="porte" [(ngModel)]="animal.porte"
+                                    class="form-control" placeholder="porte">
                             </div>
                             <div>
                                 <select name="estado" [(ngModel)]="idEstadoSelecionado" (change)="buscarCidade()"
@@ -40,14 +48,19 @@
                                 </select>
                             </div>
                             <div>
-                                <select name="cidade"  [(ngModel)]="idCidadeSelecionada" class="selects">
+                                <select name="cidade" [(ngModel)]="animal.cidade" class="selects">
                                     <option> Selecione</option>
-                                    <option *ngFor="let cidade of cidades | async" value="{{cidade.id}}">{{cidade.nome}}
+                                    <option *ngFor="let cidade of cidades | async" value="{{cidade.nome}}">
+                                        {{cidade.nome}}
                                     </option>
                                 </select>
                             </div>
-                            <button (click)="salvar()" class="btn btn-primary">Cadastrar</button>
-                            
+                            <div>
+                                <input type="file" src="" alt="" (change)="inputFile($event.target.files)">
+                            </div>
+                            <div>
+                                <button (click)="salvar()" class="btn btn-primary">Cadastrar</button>
+                            </div>
                         </form>
                         <p class="cadastro-card-footer-text"> Clique <a routerLink="/home" class="text-reset"> aqui</a>
                             para voltar</p>
