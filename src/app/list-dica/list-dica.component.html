@@ -5,7 +5,7 @@
             <button routerLink="/novadica" class="slide_from_left"><strong>+</strong>Add Dica</button>
         </div>
 
-        <a href="http://localhost:4200/verdica">
+        <a href="http://localhost:4200/verdica" *ngFor="let dica of dicas | async">
             <div class="card">
                 <div class="row">
                     <div class="col-md-4">
@@ -13,99 +13,12 @@
                     </div>
                     <div class="col-md-8">
                         <div id="conteudo">
-                            <h3>5 TIPOS DE ALIMENTOS QUE VOCÊ NÃO DEVE DAR AO SEU PET</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At tempore nostrum
-                                officia sequi...</p>
+                            <h3>{{dica.titulo}}</h3>
+                            <p>{{dica.descricao}}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </a>
-
-        <a href="#">
-            <div class="card">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img class="card-img" src="../../assets/papagaio.jpg" alt="Card image cap">
-                    </div>
-                    <div class="col-md-8">
-                        <div id="conteudo">
-                            <h3>5 TIPOS DE ALIMENTOS QUE VOCÊ NÃO DEVE DAR AO SEU PET</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At tempore nostrum
-                                officia sequi...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="card">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img class="card-img" src="../../assets/papagaio.jpg" alt="Card image cap">
-                    </div>
-                    <div class="col-md-8">
-                        <div id="conteudo">
-                            <h3>5 TIPOS DE ALIMENTOS QUE VOCÊ NÃO DEVE DAR AO SEU PET</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At tempore nostrum
-                                officia sequi...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="card">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img class="card-img" src="../../assets/papagaio.jpg" alt="Card image cap">
-                    </div>
-                    <div class="col-md-8">
-                        <div id="conteudo">
-                            <h3>5 TIPOS DE ALIMENTOS QUE VOCÊ NÃO DEVE DAR AO SEU PET</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At tempore nostrum
-                                officia sequi...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="card">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img class="card-img" src="../../assets/papagaio.jpg" alt="Card image cap">
-                    </div>
-                    <div class="col-md-8">
-                        <div id="conteudo">
-                            <h3>5 TIPOS DE ALIMENTOS QUE VOCÊ NÃO DEVE DAR AO SEU PET</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At tempore nostrum
-                                officia sequi...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="card">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img class="card-img" src="../../assets/papagaio.jpg" alt="Card image cap">
-                    </div>
-                    <div class="col-md-8">
-                        <div id="conteudo">
-                            <h3>5 TIPOS DE ALIMENTOS QUE VOCÊ NÃO DEVE DAR AO SEU PET</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At tempore nostrum
-                                officia sequi...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-
     </div>
 </div>

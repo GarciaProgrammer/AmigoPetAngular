@@ -13,4 +13,5 @@ export class UsuarioService {
     return this.http.post('http://localhost:8080/usuario/cadastrar', usuario);
   }
 
+  
 }
