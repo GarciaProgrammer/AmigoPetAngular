@@ -1,5 +1,6 @@
 import { Observable } from 'rxjs';
-import { WhatssappService } from './../services/whatssapp.service';
+import { AnimalService } from './../services/animal.service';
+import { Animal } from './../beans/Animal';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,19 +11,22 @@ import { Component, OnInit } from '@angular/core';
 export class VisualizarAnimalComponent implements OnInit {
 
   wpp?:string;
+  animal: Observable<Animal> = new Observable();
 
-  constructor(private servico:WhatssappService) {
+  constructor(private servico:AnimalService) {
 
    }
 
   ngOnInit(): void {
-    this.criarLink();
-    
+    this.criaLinkWhatsapp(); 
   }
 
-  criarLink(){
-    this.wpp = this.servico.criarLink(47992201803);
+  criaLinkWhatsapp(){
+ //   this.wpp = 
+  }
 
+  getAnimalSelecionado(id:number){
+   this.animal = this.servico.getAnimalById(id);
   }
 
 }

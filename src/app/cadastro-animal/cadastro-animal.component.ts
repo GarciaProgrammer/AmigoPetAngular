@@ -26,9 +26,6 @@ export class CadastroAnimalComponent implements OnInit {
 
   ngOnInit(): void {
     this.buscar();
-    // this.animalServico.listarAnimais()
-    //   .subscribe(data => console.log(data)
-    //   );
   }
 
   buscar() {
@@ -39,23 +36,26 @@ export class CadastroAnimalComponent implements OnInit {
 
   buscarCidade() {
     this.cidades = this.estadoServico.buscarCidade(this.idEstadoSelecionado);
-    this.cidades.subscribe(
-      resolve => console.log(resolve)
-    );
+  }
+
+  inputFile(files: FileList) {
+    console.log(files);
+    this.animal.foto = files[0];
   }
 
   salvar() {
-    this.animal.status = 'A';
-    this.animal.cidade = this.cidadeNome;
-    this.animal.estado = 'teste';
-    this.animalServico.salvarAnimal(this.animal).subscribe(
-      (animal: Animal) => {
-        alert('Animal' + animal.nome + 'Salvo com sucesso!');
-      },
-      error => {
-        console.log(error);
-      }
-    )
-    this.animal = new Animal;
+    if (this.animal.nome != null) {
+      this.animal.status = 'A';
+      this.animal.estado = 'teste';
+      this.animalServico.salvarAnimal(this.animal).subscribe(
+        (animal: Animal) => {
+          alert('Animal' + animal.nome + 'Salvo com sucesso!');
+        },
+        error => {
+          console.log(error);
+        }
+      )
+      this.animal = new Animal;
+    }
   }
 }

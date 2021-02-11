@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Animal } from '../beans/Animal';
 
@@ -15,6 +15,23 @@ export class AnimalService {
   }
 
   salvarAnimal(animal:Animal){
-    return this.http.post('http://localhost:8080/animal/cadastrar', animal);
+    let form = new FormData();
+    form.append('nome', animal.nome || '');
+    form.append('foto', animal.foto || '');
+
+
+    return this.http.post('http://localhost:8080/animal/cadastrar', form, this.getHeaders());
+  }
+
+  getAnimalById(id:number){
+    return this.http.get('http://localhost:8080/animal/visualizar/' + id);
+  }
+
+  getHeaders(){
+    const header = new HttpHeaders({
+      'Accept': 'application/json'
+    });
+
+    return header;
   }
 }

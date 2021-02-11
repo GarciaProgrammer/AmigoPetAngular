@@ -17,7 +17,7 @@ export class EditAnimalComponent implements OnInit {
   
   estados: Observable<Estado[]> = new Observable();
   cidades: Observable<Cidade[]> = new Observable();
-  idEstadoSelecionado: number = 0;
+  idEstadoSelecionado: string = '0';
   animais?:Animal[];
 
   

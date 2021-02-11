@@ -1,3 +1,5 @@
+import { UsuarioService } from './../services/usuario.service';
+import { Usuario } from './../beans/Usuario';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroComponent implements OnInit {
 
-  constructor() { }
+  usuario: Usuario = {};
+  constructor(private servico: UsuarioService) { }
 
   ngOnInit(): void {
   }
 
+  cadastrar() {
+    this.servico.cadastrarUsuario(this.usuario).subscribe(
+      resolve => {
+        console.log(resolve);
+      }, error => {
+        console.log(error);
+      }
+    );
+  }
 }
