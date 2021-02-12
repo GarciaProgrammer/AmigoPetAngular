@@ -18,10 +18,16 @@ export class CadastroComponent implements OnInit {
   cadastrar() {
     this.servico.cadastrarUsuario(this.usuario).subscribe(
       resolve => {
-        console.log(resolve);
+        window.alert("Usuario " + this.usuario.nome + " Cadastrado com sucesso!")
+        this.usuario = new Usuario;
       }, error => {
         console.log(error);
       }
     );
   }
+
+  
+
+
+
 }

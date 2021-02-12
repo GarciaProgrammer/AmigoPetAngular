@@ -1,6 +1,5 @@
 import { Animal } from './../beans/Animal';
 import { AnimalService } from './../services/animal.service';
-import { EstadoService } from './../services/estado.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 

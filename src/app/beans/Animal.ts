@@ -1,3 +1,5 @@
+import { Usuario } from './Usuario';
+
 export class Animal {
 
     nome?:string;
@@ -11,4 +13,5 @@ export class Animal {
     porte?:string;
     status?:string;
     foto?: File;
+    usuario_id?: number;
 }

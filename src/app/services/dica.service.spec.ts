@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LoginService } from './login.service';
+import { DicaService } from './dica.service';
 
-describe('LoginService', () => {
-  let service: LoginService;
+describe('DicaService', () => {
+  let service: DicaService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LoginService);
+    service = TestBed.inject(DicaService);
   });
 
   it('should be created', () => {

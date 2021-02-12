@@ -18,6 +18,7 @@ export class CadastroAnimalComponent implements OnInit {
   cidades: Observable<Cidade[]> = new Observable();
   idEstadoSelecionado?: string = '0';
   idCidadeSelecionada?: string = '0';
+  
   cidadeNome?: string = '0';
   animais?: Animal[];
   animal: Animal = {};
@@ -45,10 +46,11 @@ export class CadastroAnimalComponent implements OnInit {
 
   salvar() {
     if (this.animal.nome != null) {
+      this.animal.usuario_id = 1;
       this.animal.status = 'A';
       this.animal.estado = 'teste';
       this.animalServico.salvarAnimal(this.animal).subscribe(
-        (animal: Animal) => {
+        (animal: any) => {
           alert('Animal' + animal.nome + 'Salvo com sucesso!');
         },
         error => {

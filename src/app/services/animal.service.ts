@@ -15,23 +15,11 @@ export class AnimalService {
   }
 
   salvarAnimal(animal:Animal){
-    let form = new FormData();
-    form.append('nome', animal.nome || '');
-    form.append('foto', animal.foto || '');
-
-
-    return this.http.post('http://localhost:8080/animal/cadastrar', form, this.getHeaders());
+    return this.http.post('http://localhost:8080/animal/cadastrar', animal);
   }
 
   getAnimalById(id:number){
     return this.http.get('http://localhost:8080/animal/visualizar/' + id);
   }
 
-  getHeaders(){
-    const header = new HttpHeaders({
-      'Accept': 'application/json'
-    });
-
-    return header;
-  }
 }
