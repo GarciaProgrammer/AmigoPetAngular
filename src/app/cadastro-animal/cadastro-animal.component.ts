@@ -9,21 +9,25 @@ import { Cidade } from '../beans/Cidade';
 @Component({
   selector: 'app-cadastro-animal',
   templateUrl: './cadastro-animal.component.html',
-  styleUrls: ['./cadastro-animal.component.scss']
+  styleUrls: ['./cadastro-animal.component.scss'],
 })
 export class CadastroAnimalComponent implements OnInit {
-
   uri = 'localhost:8080/animal/';
   estados: Observable<Estado[]> = new Observable();
   cidades: Observable<Cidade[]> = new Observable();
   idEstadoSelecionado?: string = '0';
   idCidadeSelecionada?: string = '0';
-  
+  sexoAnimal?: string = '0';
+
+  idadeAnimal?: number;
   cidadeNome?: string = '0';
   animais?: Animal[];
   animal: Animal = {};
 
-  constructor(private estadoServico: EstadoService, private animalServico: AnimalService) { }
+  constructor(
+    private estadoServico: EstadoService,
+    private animalServico: AnimalService
+  ) {}
 
   ngOnInit(): void {
     this.buscar();
@@ -31,8 +35,7 @@ export class CadastroAnimalComponent implements OnInit {
 
   buscar() {
     this.estados = this.estadoServico.buscarEstados();
-    this.estados.subscribe(resolve => console.log(resolve)
-    );
+    this.estados.subscribe((resolve) => console.log(resolve));
   }
 
   buscarCidade() {
@@ -46,18 +49,28 @@ export class CadastroAnimalComponent implements OnInit {
 
   salvar() {
     if (this.animal.nome != null) {
-      this.animal.usuario_id = 1;
-      this.animal.status = 'A';
-      this.animal.estado = 'teste';
-      this.animalServico.salvarAnimal(this.animal).subscribe(
-        (animal: any) => {
-          alert('Animal' + animal.nome + 'Salvo com sucesso!');
-        },
-        error => {
-          console.log(error);
+      if(this.idadeAnimal != null && this.idadeAnimal >= 0){
+        if(this.idadeAnimal >= 0 && this.idadeAnimal <= 3) {
+          this.animal.idade = 'Filhote';
+        } else if (this.idadeAnimal >= 3 && this.idadeAnimal < 7){
+          this.animal.idade = 'Adulto';
+        } else {
+          this.animal.idade = 'Idoso';
         }
-      )
-      this.animal = new Animal;
+      }
+      this.animal.sexo = this.sexoAnimal;
+      this.animal.status = 'A';
+      this.animal.estado = this.idEstadoSelecionado;
+      this.animal.cidade = this.idCidadeSelecionada;
     }
+    this.animalServico.salvarAnimal(this.animal).subscribe(
+      (animal: any) => {
+        alert('Animal' + animal.nome + 'Salvo com sucesso!');
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+    this.animal = new Animal();
   }
 }
