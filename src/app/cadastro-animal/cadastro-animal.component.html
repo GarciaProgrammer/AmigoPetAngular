@@ -27,7 +27,7 @@
                             <div>
                                 <label for="idade" class="sr-only">Idade</label>
                                 <input type="number" name="idade" id="idade" class="form-control"
-                                    [(ngModel)]="animal.idade" placeholder="idade">
+                                    [(ngModel)]="idadeAnimal" placeholder="idade">
                             </div>
                             <div>
                                 <label for="descricao" class="sr-only">Descrição</label>
@@ -40,6 +40,13 @@
                                     class="form-control" placeholder="porte">
                             </div>
                             <div>
+                              <select name="sexo" [(ngModel)]="sexoAnimal" class="selects">
+                                  <option value="0"> Selecione</option>
+                                  <option value="0"> Macho</option>
+                                  <option value="0"> Femea</option>
+                              </select>
+                          </div>
+                            <div>
                                 <select name="estado" [(ngModel)]="idEstadoSelecionado" (change)="buscarCidade()"
                                     class="selects">
                                     <option value="0"> Selecione</option>
@@ -48,9 +55,9 @@
                                 </select>
                             </div>
                             <div>
-                                <select name="cidade"  [(ngModel)]="animal.cidade" class="selects">
-                                    <option selected> Selecione</option>
-                                    <option *ngFor="let cidade of cidades | async" value="{{cidade.nome}}">
+                                <select name="cidade"  [(ngModel)]="idCidadeSelecionada" class="selects">
+                                    <option value="0"> Selecione</option>
+                                    <option *ngFor="let cidade of cidades | async" value="{{cidade.id}}">
                                         {{cidade.nome}}
                                     </option>
                                 </select>
