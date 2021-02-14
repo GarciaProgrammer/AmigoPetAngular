@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 const aux = window.localStorage.getItem('token');
@@ -9,8 +10,9 @@ const aux = window.localStorage.getItem('token');
 })
 export class MenuComponent implements OnInit {
 
-  userVerific: boolean = false;
+  constructor() { }
 
+  userVerific: boolean = false;
 
   verificaUsuario(usuarioOn:any) {
     if (usuarioOn != null) {
@@ -21,7 +23,6 @@ export class MenuComponent implements OnInit {
   }
 
   collapsed = true;
-  constructor() { }
 
   ngOnInit(): void {
     this.verificaUsuario(aux);

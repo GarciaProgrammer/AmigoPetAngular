@@ -1,4 +1,4 @@
-import { TokenStorageService } from './../services/token-storage.service';
+import { MenuComponent } from './../menu/menu.component';
 import { Router } from '@angular/router';
 import { AuthService } from './../services/auth.service';
 import { Usuario } from './../beans/Usuario';
@@ -14,8 +14,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private servico: AuthService,
-    private tokenStore: TokenStorageService,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit(): void {}
@@ -23,8 +22,9 @@ export class LoginComponent implements OnInit {
   salvar() {
     this.servico.login(this.usuario).subscribe(
       (data) => {
-        window.localStorage.setItem('token', data.token)
-        //this.tokenStore.saveToken(data.accessToken);
+        window.localStorage.removeItem('token');
+        window.localStorage.setItem('token', data.token);
+
         this.router.navigate(['home']);
       },
       (erro) => {

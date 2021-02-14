@@ -38,14 +38,7 @@
       </li>
 
       <li class="nav-item">
-        <a
-          tabindex="0"
-          routerLink="/listong"
-          id="navbarDropdown2"
-          role="button"
-        >
-          Ongs
-        </a>
+        <a tabindex="0" routerLink="/listong" id="navbarDropdown2" role="button"> Ongs </a>
       </li>
 
       <li class="nav-item">
@@ -55,27 +48,14 @@
       </li>
 
       <li>
-        <a
-          tabindex="0"
-          routerLink="/cadastro"
-          id="navbarDropdown2"
-          role="button"
-          id="btnCadastro"
-        >
-          Cadastre-se
-        </a>
+        <a tabindex="0" routerLink="/cadastro" id="navbarDropdown2" role="button" id="btnCadastro"  *ngIf="!userVerific"> Cadastre-se </a>
       </li>
 
-      <li class="nav-item" ngbDropdown display="dynamic">
-        <a tabindex="0" ngbDropdownToggle role="button"
-          ><i class="far fa-user"></i
-        ></a>
-        <div
-          ngbDropdownMenu
-          aria-labelledby="navbarDropdown3"
-          class="dropdown-menu"
-          *ngIf="userVerific"
-        >
+      <li class="nav-item" ngbDropdown display="dynamic"  *ngIf="userVerific">
+        <a tabindex="0" ngbDropdownToggle role="button">
+          <i class="far fa-user"></i>
+        </a>
+        <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
           <span><a routerLink="/meuperfil" ngbDropdownItem>Meu perfil</a></span>
           <span><a routerLink="/cadastroAnimal" ngbDropdownItem>Doar</a></span>
           <span><a routerLink="/pets" ngbDropdownItem>Pets</a></span>
