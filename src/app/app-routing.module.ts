@@ -1,3 +1,4 @@
+import { PadraoGuard } from './guards/padrao.guard';
 import { CadastroAnimalComponent } from './cadastro-animal/cadastro-animal.component';
 import { VisualizarAnimalComponent } from './visualizar-animal/visualizar-animal.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
@@ -18,21 +19,21 @@ import { EditAnimalComponent } from './edit-animal/edit-animal.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'cadastro', component: CadastroComponent},
+  { path: 'novadica', component: AddDicaComponent, canActivate: [PadraoGuard]},
+  { path: 'visualizar', component: VisualizarAnimalComponent, canActivate: [PadraoGuard]},
+  { path: 'pets', component: PetsComponent, canActivate: [PadraoGuard]},
+  { path: 'meuperfil', component: PerfilUsuarioComponent, canActivate: [PadraoGuard]},
+  { path: 'cadastroAnimal', component: CadastroAnimalComponent, canActivate: [PadraoGuard]},
+  { path: 'cadastrardica', component: CadastrarDicaComponent, canActivate: [PadraoGuard]},
+  { path: 'editardica', component: EditarDicaComponent, canActivate: [PadraoGuard]},
+  { path: 'editarpet', component: EditAnimalComponent, canActivate: [PadraoGuard]},
   { path: 'listdicas', component: ListDicaComponent},
-  { path: 'novadica', component: AddDicaComponent},
+  { path: 'cadastro', component: CadastroComponent, },
+  { path: 'login', component: LoginComponent},
   { path: 'verdica', component: VerdicaComponent},
-  { path: 'visualizar', component: VisualizarAnimalComponent},
-  { path: 'pets', component: PetsComponent},
   { path: 'listong', component: ListOngComponent},
-  { path: 'meuperfil', component: PerfilUsuarioComponent},
+  { path: 'home', component: HomeComponent},
   { path: 'sobre', component: SobreComponent},
-  { path: 'cadastroAnimal', component: CadastroAnimalComponent},
-  { path: 'cadastrardica', component: CadastrarDicaComponent},
-  { path: 'editardica', component: EditarDicaComponent}, 
-  { path: 'editarpet', component: EditAnimalComponent}
 ];
 
 @NgModule({

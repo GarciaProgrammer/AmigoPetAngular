@@ -14,14 +14,14 @@
                         <form action="login" method="post">
                             <div class="form-group">
                                 <label for="login" class="sr-only">E-mail</label>
-                                <input type="email" name="email" id="email" class="form-control" placeholder="E-mail">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="E-mail" [(ngModel)]="usuario.email">
                             </div>
                             <div class="form-group mb-4">
                                 <label for="password" class="sr-only">Password</label>
                                 <input type="password" name="password" id="password" class="form-control"
-                                    placeholder="***********">
+                                    placeholder="***********" [(ngModel)]="usuario.senha">
                             </div>
-                            <input type="submit" id="login" class="btn btn-block login-btn mb-4" type="button"
+                            <input type="submit" id="login" class="btn btn-block login-btn mb-4" (click)="salvar()" type="button"
                                 value="Login">
                         </form>
                         <p class="login-card-footer-text"> Não tem uma conta? <a routerLink="/cadastro"
