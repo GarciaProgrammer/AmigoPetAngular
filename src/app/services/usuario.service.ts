@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Usuario } from './../beans/Usuario';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,11 +7,11 @@ import { Injectable } from '@angular/core';
 })
 export class UsuarioService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  cadastrarUsuario(usuario:Usuario){
+
+  cadastrarUsuario(usuario: Usuario){
     return this.http.post('http://localhost:8080/usuario/cadastrar', usuario);
   }
 
-  
 }
