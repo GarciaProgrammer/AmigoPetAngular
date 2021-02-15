@@ -1,7 +1,9 @@
+import { TokenServiceService } from './../services/token-service.service';
+import { Observable } from 'rxjs';
+import { UsuarioService } from './../services/usuario.service';
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-
-const aux = window.localStorage.getItem('token');
+import { Usuario } from '../beans/Usuario';
 
 @Component({
   selector: 'app-menu',
@@ -10,22 +12,26 @@ const aux = window.localStorage.getItem('token');
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  user$: Observable<Usuario>;
+  user?: Usuario;
+  logged: boolean = false;
+  constructor(tokenService: TokenServiceService) {
+    this.user$ = tokenService.getUser();
+    this.user$.subscribe(user => this.user = user);
+   }
 
-  userVerific: boolean = false;
-
-  verificaUsuario(usuarioOn:any) {
-    if (usuarioOn != null) {
-      this.userVerific = true;
+  verificaUsuario(){
+    if (this.user != null) {
+      this.logged = true;
     } else {
-      this.userVerific = false;
+      this.logged = false;
     }
   }
 
   collapsed = true;
 
   ngOnInit(): void {
-    this.verificaUsuario(aux);
+    this.verificaUsuario();
   }
 
 }

@@ -1,3 +1,4 @@
+import { TokenServiceService } from './../services/token-service.service';
 import { AnimalService } from './../services/animal.service';
 import { Animal } from './../beans/Animal';
 import { EstadoService } from './../services/estado.service';
@@ -5,6 +6,7 @@ import { Estado } from './../beans/Estado';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Cidade } from '../beans/Cidade';
+import { Usuario } from '../beans/Usuario';
 
 @Component({
   selector: 'app-cadastro-animal',
@@ -23,11 +25,22 @@ export class CadastroAnimalComponent implements OnInit {
   cidadeNome?: string = '0';
   animais?: Animal[];
   animal: Animal = {};
+  user$: Observable<Usuario>;
+  user: Usuario = {};
 
   constructor(
     private estadoServico: EstadoService,
-    private animalServico: AnimalService
-  ) {}
+    private animalServico: AnimalService,
+    private tokenService: TokenServiceService
+  ) {
+    this.user$ = tokenService.getUser();
+    this.user$.subscribe((resolve) => {
+      this.user.id = resolve.sub;
+      this.user.nome = resolve.nome;
+      this.user.email = resolve.email;
+      this.user.celular = resolve.celular;
+    });
+  }
 
   ngOnInit(): void {
     this.buscar();
@@ -54,14 +67,15 @@ export class CadastroAnimalComponent implements OnInit {
           this.animal.idade = 'Filhote';
         } else if (this.idadeAnimal >= 3 && this.idadeAnimal < 7){
           this.animal.idade = 'Adulto';
-        } else {
+        } else if ( this.idadeAnimal >= 7){
           this.animal.idade = 'Idoso';
         }
       }
-      this.animal.sexo = this.sexoAnimal;
       this.animal.status = 'A';
+      this.animal.sexo = this.sexoAnimal;
       this.animal.estado = this.idEstadoSelecionado;
       this.animal.cidade = this.idCidadeSelecionada;
+      this.animal.usuario_id = this.user;
     }
     this.animalServico.salvarAnimal(this.animal).subscribe(
       (animal: any) => {

@@ -13,7 +13,7 @@ export class PadraoGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem('authToken');
       if (token) {
         return true;
       } else {

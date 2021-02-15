@@ -23,6 +23,7 @@
           role="button"
         >
           Doar Pet
+          {{user?.nome}}
         </a>
       </li>
 
@@ -48,10 +49,10 @@
       </li>
 
       <li>
-        <a tabindex="0" routerLink="/cadastro" id="navbarDropdown2" role="button" id="btnCadastro"  *ngIf="!userVerific"> Cadastre-se </a>
+        <a tabindex="0" routerLink="/cadastro" id="navbarDropdown2" role="button" id="btnCadastro"  *ngIf="!logged"> Cadastre-se </a>
       </li>
 
-      <li class="nav-item" ngbDropdown display="dynamic"  *ngIf="userVerific">
+      <li class="nav-item" ngbDropdown display="dynamic"  *ngIf="logged">
         <a tabindex="0" ngbDropdownToggle role="button">
           <i class="far fa-user"></i>
         </a>

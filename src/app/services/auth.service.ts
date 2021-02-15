@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 const AUTH_API = 'http://localhost:8080/auth';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-type': 'application/json' }),
+  headers: new HttpHeaders({ 'Content-type': 'application/json' })
 };
 
 @Injectable({
@@ -25,29 +25,6 @@ export class AuthService {
       },
       httpOptions
     );
-  }
-
-  setAuth(token: string) {
-    localStorage.setItem('token', token);
-  }
-
-  getAuth() {
-    return localStorage.getItem('token');
-  }
-
-  logout() {
-    return new Promise((resolve) => {
-      localStorage.removeItem('token');
-      return resolve(true);
-    });
-  }
-
-  getHeaderAuth() {
-    const header = new HttpHeaders({
-      Accepted: 'application/json',
-      Authorization: 'Bearer ' + this.getAuth(),
-    });
-    return header;
   }
 
 }
