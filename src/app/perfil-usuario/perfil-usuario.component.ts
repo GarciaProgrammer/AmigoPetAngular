@@ -43,6 +43,8 @@ export class PerfilUsuarioComponent implements OnInit {
   alterarUsuario() {
     if ( this.usuario.senha != null){
     this.usuarioServico.alterar(this.usuario);
+    } else {
+      window.alert("A senha não pode ser vazia");
     }
   }
 
