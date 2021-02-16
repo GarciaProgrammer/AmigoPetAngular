@@ -20,8 +20,9 @@ export class UsuarioService {
   alterar(usuario: Usuario) {
     return this.http.put('http://localhost:8080/usuario/alterar/' + usuario.id, usuario, this.getAuthHeaders())
     .subscribe(
-      (data) => {
+      (data:any) => {
         this.tokenService.removeToken();
+        this.tokenService.setToken(data.token);
       }, (error) => {
         console.log(error.error.message);
       }

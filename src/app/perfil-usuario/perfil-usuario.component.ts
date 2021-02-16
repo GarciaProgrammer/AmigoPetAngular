@@ -41,7 +41,9 @@ export class PerfilUsuarioComponent implements OnInit {
   }
 
   alterarUsuario() {
+    if ( this.usuario.senha != null){
     this.usuarioServico.alterar(this.usuario);
+    }
   }
 
   getAuth() {
@@ -51,6 +53,7 @@ export class PerfilUsuarioComponent implements OnInit {
       this.usuario.nome = resolve.nome;
       this.usuario.email = resolve.email;
       this.usuario.celular = resolve.celular;
+      this.usuario.senha = resolve.senha;
     }
     );
   }
