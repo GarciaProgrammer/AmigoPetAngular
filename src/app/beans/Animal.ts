@@ -1,7 +1,7 @@
 import { Usuario } from './Usuario';
 
 export class Animal {
-
+    id?:number;
     nome?:string;
     tipo?:string;
     raca?:string;

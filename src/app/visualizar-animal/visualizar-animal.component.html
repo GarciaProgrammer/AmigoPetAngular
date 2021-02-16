@@ -27,20 +27,19 @@
       <div class="row">
         <div class="card">
           <div class="card-body">
-            <h3>Belinha</h3>
+            <h3>{{animal.nome}}</h3>
 
-            <p>Raça: Ciames</p>
+            <p>Raça: {{animal.raca}}</p>
 
-            <p>Porte: Pequeno</p>
+            <p>Porte:{{animal.porte}}</p>
 
-            <p>Sexo: Fêmea</p>
+            <p>Sexo: {{animal.sexo}}</p>
 
-            <p>Espécie: Gato</p>
+            <p>Espécie: {{animal.tipo}}</p>
 
-            <p>Idade: Adulta</p>
+            <p>Idade: {{animal.idade}}</p>
 
-            <p>Descrição: Gato atentado, não deixa a gente dormir em paz uma noite
-              se quer</p>
+            <p>Descrição: {{animal.descricao}}</p>
 
           </div>
         </div>
@@ -50,13 +49,13 @@
         <div class="card">
           <div class="card-body">
             <h3>Entre em contato com o doador</h3>
-            <p>Telefone: 47 99220-1803</p>
-            
-            <a href="https://api.whatsapp.com/send?l=pt&amp;phone=556199999999" 
+            <p>Telefone: {{animal.usuario.celular}}</p>
+
+            <a href="https://api.whatsapp.com/send?l=pt&amp;phone=556199999999"
             class="whatsapp_2 float float-right float-floatingButtonCenter"
              style="background-color: #25d366;" target="_blank">
             <i class="whatsapp_2 fa fa-whatsapp whatsapp "></i>
-            </a> 
+            </a>
           </div>
         </div>
       </div>

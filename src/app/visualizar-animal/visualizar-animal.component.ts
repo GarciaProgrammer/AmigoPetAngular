@@ -2,31 +2,34 @@ import { Observable } from 'rxjs';
 import { AnimalService } from './../services/animal.service';
 import { Animal } from './../beans/Animal';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-visualizar-animal',
   templateUrl: './visualizar-animal.component.html',
-  styleUrls: ['./visualizar-animal.component.scss']
+  styleUrls: ['./visualizar-animal.component.scss'],
 })
 export class VisualizarAnimalComponent implements OnInit {
+  animal: Animal = {};
+  wpp?: string;
 
-  wpp?:string;
-  animal: Observable<Animal> = new Observable();
-
-  constructor(private servico:AnimalService) {
-
-   }
+  constructor(private servico: AnimalService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.criaLinkWhatsapp(); 
+    this.criaLinkWhatsapp();
+    this.getAnimalById(this.route.snapshot.paramMap.get('id'));
   }
 
-  criaLinkWhatsapp(){
- //   this.wpp = 
+  criaLinkWhatsapp() {
+    //   this.wpp =
   }
 
-  getAnimalSelecionado(id:number){
-   this.animal = this.servico.getAnimalById(id);
+  getAnimalById(id: any) {
+    this.servico.getAnimalById(id)
+    .subscribe(
+      data => {
+        this.animal = data;
+      }
+    );
   }
-
 }

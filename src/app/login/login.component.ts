@@ -10,15 +10,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-
   usuario: Usuario = {};
   islogged = false;
-
 
   constructor(
     private servico: AuthService,
     private router: Router,
-    private tokenServico:TokenServiceService
+    private tokenServico: TokenServiceService
   ) {}
 
   ngOnInit(): void {}
@@ -27,8 +25,9 @@ export class LoginComponent implements OnInit {
     this.servico.login(this.usuario).subscribe(
       (data) => {
         this.tokenServico.setToken(data.token);
-
-        this.router.navigate(['home']);
+        this.router.navigate(['home']).then(() => {
+          location.reload();
+        });
       },
       (erro) => {
         console.log(erro.error.message);

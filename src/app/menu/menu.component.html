@@ -49,7 +49,7 @@
       </li>
 
       <li>
-        <a tabindex="0" routerLink="/cadastro" id="navbarDropdown2" role="button" id="btnCadastro"  *ngIf="!logged"> Cadastre-se </a>
+        <a tabindex="0" routerLink="/login" id="navbarDropdown2" role="button" id="btnCadastro"  *ngIf="!logged"> Login </a>
       </li>
 
       <li class="nav-item" ngbDropdown display="dynamic"  *ngIf="logged">
@@ -60,6 +60,7 @@
           <span><a routerLink="/meuperfil" ngbDropdownItem>Meu perfil</a></span>
           <span><a routerLink="/cadastroAnimal" ngbDropdownItem>Doar</a></span>
           <span><a routerLink="/pets" ngbDropdownItem>Pets</a></span>
+          <span><a ngbDropDownItem (click)="logoff()"> Deslogar</a> </span>
         </div>
       </li>
     </ul>

@@ -12,18 +12,22 @@ export class DicaService {
 
   cadastrarDica(dica:Dica){
     return this.http.post('http://localhost:8080/dica/cadastrar', dica, this.getAuthHeader());
-    
+
   }
 
   getAllDicas(): Observable<any>{
     return this.http.get('http://localhost:8080/dica/lista',  this.getAuthHeader());
   }
-  
+
   getAuthHeader(){
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-type': 'application/json',
       'Authorization': 'Bearer ' + localStorage.getItem('authToken') })
     };
     return httpOptions;
+  }
+
+  getDicaById(id:number) {
+    return this.http.get('http://localhost:8080/dica/visualizar/'+ id);
   }
 }

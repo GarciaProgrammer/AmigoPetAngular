@@ -20,7 +20,7 @@ import { EditAnimalComponent } from './edit-animal/edit-animal.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'novadica', component: AddDicaComponent, canActivate: [PadraoGuard]},
-  { path: 'visualizar', component: VisualizarAnimalComponent, canActivate: [PadraoGuard]},
+  { path: 'visualizar/:id', component: VisualizarAnimalComponent, canActivate: [PadraoGuard]},
   { path: 'pets', component: PetsComponent, canActivate: [PadraoGuard]},
   { path: 'meuperfil', component: PerfilUsuarioComponent, canActivate: [PadraoGuard]},
   { path: 'cadastroAnimal', component: CadastroAnimalComponent, canActivate: [PadraoGuard]},
@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'listdicas', component: ListDicaComponent},
   { path: 'cadastro', component: CadastroComponent, },
   { path: 'login', component: LoginComponent},
-  { path: 'verdica', component: VerdicaComponent},
+  { path: 'verdica/:id', component: VerdicaComponent},
   { path: 'listong', component: ListOngComponent},
   { path: 'home', component: HomeComponent},
   { path: 'sobre', component: SobreComponent},

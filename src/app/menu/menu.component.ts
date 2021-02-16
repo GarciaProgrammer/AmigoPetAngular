@@ -15,9 +15,14 @@ export class MenuComponent implements OnInit {
   user$: Observable<Usuario>;
   user?: Usuario;
   logged: boolean = false;
-  constructor(tokenService: TokenServiceService) {
+  constructor(private tokenService: TokenServiceService) {
     this.user$ = tokenService.getUser();
     this.user$.subscribe(user => this.user = user);
+   }
+
+   logoff(){
+     this.tokenService.removeToken();
+     location.reload();
    }
 
   verificaUsuario(){

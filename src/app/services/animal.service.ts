@@ -22,7 +22,7 @@ export class AnimalService {
   }
 
   getAnimalById(id:number){
-    return this.http.get('http://localhost:8080/animal/visualizar/' + id);
+    return this.http.get('http://localhost:8080/animal/visualizar/' + id, this.getAuthHeaders());
   }
 
   getAuthHeaders(){
