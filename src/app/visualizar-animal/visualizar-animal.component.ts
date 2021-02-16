@@ -13,6 +13,8 @@ export class VisualizarAnimalComponent implements OnInit {
   animal: Animal = {};
   wpp?: string;
 
+  celularUsuario?:string;
+  nomeUsuario?:string;
   constructor(private servico: AnimalService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -27,8 +29,10 @@ export class VisualizarAnimalComponent implements OnInit {
   getAnimalById(id: any) {
     this.servico.getAnimalById(id)
     .subscribe(
-      data => {
+      (data:any) => {
         this.animal = data;
+        this.celularUsuario = data.celularUsuario;
+        this.nomeUsuario = data.nomeUsuario;
       }
     );
   }

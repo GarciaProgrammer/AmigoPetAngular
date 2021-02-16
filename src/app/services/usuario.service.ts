@@ -23,7 +23,9 @@ export class UsuarioService {
       (data:any) => {
         this.tokenService.removeToken();
         this.tokenService.setToken(data.token);
+        window.alert("alterado com sucesso!");
       }, (error) => {
+        window.alert("Email ja cadastrado!");
         console.log(error.error.message);
       }
     )
