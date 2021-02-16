@@ -13,5 +13,5 @@ export class Animal {
     porte?:string;
     status?:string;
     foto?: File;
-    usuario_id?: Usuario;
+    usuario?: Usuario;
 }

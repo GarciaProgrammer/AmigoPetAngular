@@ -35,7 +35,7 @@ export class CadastroAnimalComponent implements OnInit {
   ) {
     this.user$ = tokenService.getUser();
     this.user$.subscribe((resolve) => {
-      this.user.id = resolve.sub;
+      this.user.id = resolve.id;
       this.user.nome = resolve.nome;
       this.user.email = resolve.email;
       this.user.celular = resolve.celular;
@@ -55,11 +55,6 @@ export class CadastroAnimalComponent implements OnInit {
     this.cidades = this.estadoServico.buscarCidade(this.idEstadoSelecionado);
   }
 
-  inputFile(files: FileList) {
-    console.log(files);
-    this.animal.foto = files[0];
-  }
-
   salvar() {
     if (this.animal.nome != null) {
       if(this.idadeAnimal != null && this.idadeAnimal >= 0){
@@ -75,7 +70,7 @@ export class CadastroAnimalComponent implements OnInit {
       this.animal.sexo = this.sexoAnimal;
       this.animal.estado = this.idEstadoSelecionado;
       this.animal.cidade = this.idCidadeSelecionada;
-      this.animal.usuario_id = this.user;
+      this.animal.usuario = this.user;
     }
     this.animalServico.salvarAnimal(this.animal).subscribe(
       (animal: any) => {
