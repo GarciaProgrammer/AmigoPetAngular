@@ -25,6 +25,14 @@ import { CadastroAnimalComponent } from './cadastro-animal/cadastro-animal.compo
 import { EditarDicaComponent } from './editar-dica/editar-dica.component';
 import { CadastrarDicaComponent } from './cadastrar-dica/cadastrar-dica.component';
 import { EditAnimalComponent } from './edit-animal/edit-animal.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) | null = null;
 
 @NgModule({
   declarations: [
@@ -44,8 +52,8 @@ import { EditAnimalComponent } from './edit-animal/edit-animal.component';
     PerfilUsuarioComponent,
     SobreComponent,
     CadastroAnimalComponent,
-    EditarDicaComponent,
     CadastrarDicaComponent,
+    EditarDicaComponent,
     EditAnimalComponent
   ],
   imports: [
@@ -53,9 +61,11 @@ import { EditAnimalComponent } from './edit-animal/edit-animal.component';
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule.forRoot(maskConfig) 
   ],
   providers: [EstadoService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

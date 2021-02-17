@@ -26,6 +26,7 @@
     "bootstrap": "^4.5.0",
     "bootstrap-icons": "^1.3.0",
     "jwt-decode": "^3.1.2",
+    "ngx-mask": "^11.1.4",
     "passport-http-bearer": "^1.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
