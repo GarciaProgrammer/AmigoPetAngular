@@ -33,5 +33,8 @@ export class AnimalService {
 
     return httpOptions;
   }
+  getAnimalByUser(id:string): Observable<any>{
+    return this.http.get('http://localhost:8080/animal/listarporusuario' + id);
+  }
 
 }
