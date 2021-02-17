@@ -59,7 +59,7 @@
         <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
           <span><a routerLink="/meuperfil" ngbDropdownItem>Meu perfil</a></span>
           <span><a routerLink="/cadastroAnimal" ngbDropdownItem>Doar</a></span>
-          <span><a routerLink="/pets" ngbDropdownItem>Pets</a></span>
+          <span><a routerLink="/pets/{{user.id}}" ngbDropdownItem>Pets</a></span>
           <span><a ngbDropDownItem (click)="logoff()"> Deslogar</a> </span>
         </div>
       </li>

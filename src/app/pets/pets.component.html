@@ -1,28 +1,23 @@
 <div id="filtro">
-    <div class="container row">
-        <div class="col-md-8">
-            <a id="titulo">Pets:</a>
-            <button class="grow_skew_forward">Doados</button>
-            <button class="grow_skew_forward">Ativos</button>
-            <button class="grow_skew_forward">Ambos</button>
-        </div>
+  <div class="container row">
+    <div class="col-md-8">
+      <a id="titulo">Pets:</a>
+      <button class="grow_skew_forward" (click)="doados()">Doados</button>
+      <button class="grow_skew_forward" (click)="ativos()">Ativos</button>
+      <button class="grow_skew_forward" (click)="getAnimaisByIdUser()">Ambos</button>
     </div>
+  </div>
 </div>
 <div class="container mt-5 mb-5">
-
-    <div class="card" style="width: 18rem;" id="grow">
-        <a href="/visualizar">
-            <img src="../../assets/gatoindex.jpg" class="card-img-top">
-        </a>
-        <div class="card-body">
-            <h5 class="card-title">Beni</h5>
-            <p class="card-text">Sexo: macho</p>
-            <p class="card-text">Porte: pequeno</p>
-            <button class="grow_skew_forward">Editar</button>
-            <select name="status" id="status">
-                <option value="ativo">Ativo</option>
-                <option value="doado">Doado</option>
-            </select>
-        </div>
+  <div class="card" style="width: 18rem" id="grow" *ngFor="let animal of animais | async"
+    routerLink="/editarpet/{{ animal.id }}"
+  >
+    <img src="../../assets/gatoindex.jpg" class="card-img-top" />
+    <div class="card-body">
+      <h5 class="card-title">{{ animal.nome }}</h5>
+      <p class="card-text">Sexo: {{ animal.sexo }}</p>
+      <p class="card-text">Porte: {{ animal.porte }}</p>
+      <button class="grow_skew_forward">Editar</button>
     </div>
+  </div>
 </div>

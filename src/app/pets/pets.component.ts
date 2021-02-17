@@ -32,4 +32,11 @@ export class PetsComponent implements OnInit {
     this.animais = this.animalServico.getAnimalByUser(this.idUsuario);
   }
 
+  doados(){
+    this.animais = this.animalServico.listaAnimalByStatus('D', this.idUsuario);
+  }
+  ativos(){
+    this.animais = this.animalServico.listaAnimalByStatus('A', this.idUsuario);
+  }
+
 }

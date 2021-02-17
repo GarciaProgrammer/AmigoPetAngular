@@ -4,28 +4,32 @@ import { UsuarioService } from './../services/usuario.service';
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../beans/Usuario';
+import { RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-
   user$: Observable<Usuario>;
-  user?: Usuario;
+  user: Usuario = {};
+
   logged: boolean = false;
   constructor(private tokenService: TokenServiceService) {
     this.user$ = tokenService.getUser();
-    this.user$.subscribe(user => this.user = user);
-   }
+    this.user$.subscribe((resolver) => {
+      this.user.nome = resolver.nome;
+      this.user.id = resolver.id;
+    });
+  }
 
-   logoff(){
-     this.tokenService.removeToken();
-     location.reload();
-   }
+  logoff() {
+    this.tokenService.removeToken();
+    location.reload();
+  }
 
-  verificaUsuario(){
+  verificaUsuario() {
     if (this.user != null) {
       this.logged = true;
     } else {
@@ -38,5 +42,4 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     this.verificaUsuario();
   }
-
 }

@@ -34,7 +34,15 @@ export class AnimalService {
     return httpOptions;
   }
   getAnimalByUser(id:string): Observable<any>{
-    return this.http.get('http://localhost:8080/animal/listarporusuario' + id);
+    return this.http.get('http://localhost:8080/animal/listarporusuario/' + id, this.getAuthHeaders());
+  }
+
+  editarAnimalById(animal:Animal){
+    return this.http.put('http://localhost:8080/animal/alterar/' + animal.id, animal, this.getAuthHeaders());
+  }
+
+  listaAnimalByStatus(status:string, id:string): Observable<any>{
+    return this.http.get('http://localhost:8080/animal/listarporStatus/'+ id + '/' + status, this.getAuthHeaders());
   }
 
 }
