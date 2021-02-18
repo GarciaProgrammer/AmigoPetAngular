@@ -28,6 +28,14 @@ export class DicaService {
   }
 
   getDicaById(id:number) {
-    return this.http.get('http://localhost:8080/dica/visualizar/'+ id);
+    return this.http.get('http://localhost:8080/dica/visualizar/'+ id, this.getAuthHeader());
+  }
+
+  getDicasByIdUsers(id:string): Observable<any>{
+    return this.http.get('http://localhost:8080/dica/listarporusuario/' + id, this.getAuthHeader());
+  }
+
+  alterarDica(dica:Dica){
+    return this.http.put('http://localhost:8080/dica/alterar/' + dica.id, dica, this.getAuthHeader());
   }
 }

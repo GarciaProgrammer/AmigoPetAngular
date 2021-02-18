@@ -9,11 +9,11 @@
                     <form action="" method="">
                         <div class="form-group">
                             <label for="titulo">Título da Dica:</label>
-                            <input type="text" class="form-control" id="titulo">
+                            <input type="text" class="form-control" name="titulo" [(ngModel)]="dica.titulo">
                         </div>
                         <div class="form-group">
                             <label for="conteudo">Conteudo da Dica:</label>
-                            <textarea id="conteudo" name="conteudo" rows="5" cols="85"></textarea>
+                            <textarea name="conteudo" rows="5" cols="85" [(ngModel)]="dica.descricao"></textarea>
                         </div>
 
                         <div class="form-group">
@@ -23,7 +23,7 @@
                         </div>
                         
 
-                        <button type="submit" class="btn btn-success">Salvar</button>
+                        <button type="submit" class="btn btn-success" (click)="alterarDica()">Salvar</button>
                     </form>
                 </div>
             </div>

@@ -25,43 +25,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr routerLink="/listdicas">
+                                    <tr routerLink="/" *ngFor="let dica of dicas | async">
                                         <th scope="row">1</th>
-                                        <td>O que não ...</td>
-                                        <td>Lorem, ipsum dolor sit amet consectetur ...</td>
+                                        <td>{{dica.titulo}}</td>
+                                        <td>{{dica.descricao}}</td>
                                         <td>
-                                            <button routerLink="/editardica" class="slide_from_left"
+                                            <button routerLink="/editardica/{{dica.id}}" class="slide_from_left"
                                                 id="editar">Editar</button>
                                             <button class="slide_from_left" id="excluir">Excluir</button>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>O que não ...</td>
-                                        <td>Lorem, ipsum dolor sit amet consectetur ...</td>
-                                        <td>
-                                            <button class="slide_from_left" id="editar">Editar</button>
-                                            <button class="slide_from_left" id="excluir">Excluir</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>O que não ...</td>
-                                        <td>Lorem, ipsum dolor sit amet consectetur ...</td>
-                                        <td>
-                                            <button class="slide_from_left" id="editar">Editar</button>
-                                            <button class="slide_from_left" id="excluir">Excluir</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>O que não ...</td>
-                                        <td>Lorem, ipsum dolor sit amet consectetur ...</td>
-                                        <td>
-                                            <button class="slide_from_left" id="editar">Editar</button>
-                                            <button class="slide_from_left" id="excluir">Excluir</button>
-                                        </td>
-                                    </tr>
+                                    
+                                    
                                 </tbody>
                             </table>
 
