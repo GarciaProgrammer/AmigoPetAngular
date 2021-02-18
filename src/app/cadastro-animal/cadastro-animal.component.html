@@ -15,9 +15,12 @@
                                     placeholder="Nome">
                             </div>
                             <div>
-                                <label for="Especie" class="sr-only">Espécie</label>
-                                <input type="text" name="Especie" id="especie" class="form-control"
-                                    placeholder="Especie" [(ngModel)]="animal.tipo">
+                                   <select name="Especie" [(ngModel)]="animal.tipo" class="selects">
+                                      <option value="0"> Selecione</option>
+                                      <option value="Gato"> Gato(a) </option>
+                                      <option value="Cachorro"> Cachorro(a)</option>
+                                      <option value="Outros"> Outro</option>
+                                  </select>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="raca" class="sr-only">Raça</label>
@@ -35,9 +38,12 @@
                                     class="form-control" placeholder="descricao">
                             </div>
                             <div>
-                                <label for="porte" class="sr-only">Porte</label>
-                                <input type="text" name="porte" id="porte" [(ngModel)]="animal.porte"
-                                    class="form-control" placeholder="porte">
+                                  <select name="porte" [(ngModel)]="animal.porte" class="selects">
+                                      <option value="0"> Selecione</option>
+                                      <option value="Pequeno"> Pequeno</option>
+                                      <option value="Medio"> Medio</option>
+                                      <option value="Grande"> Grande</option>
+                                  </select>
                             </div>
                             <div>
                               <select name="sexo" [(ngModel)]="sexoAnimal" class="selects">

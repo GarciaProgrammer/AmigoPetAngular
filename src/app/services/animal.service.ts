@@ -1,5 +1,5 @@
 import { TokenServiceService } from './token-service.service';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Animal } from '../beans/Animal';
@@ -10,6 +10,9 @@ import { Animal } from '../beans/Animal';
   providedIn: 'root'
 })
 export class AnimalService {
+
+  private animalBehaviorSubject = new BehaviorSubject<any>(null);
+
 
   constructor(private http: HttpClient, private tokenService:TokenServiceService ) { }
 
@@ -30,9 +33,9 @@ export class AnimalService {
       headers: new HttpHeaders({ 'Content-type': 'application/json',
       'Authorization': 'Bearer ' + localStorage.getItem('authToken') })
     };
-
     return httpOptions;
   }
+
   getAnimalByUser(id:string): Observable<any>{
     return this.http.get('http://localhost:8080/animal/listarporusuario/' + id, this.getAuthHeaders());
   }
@@ -48,4 +51,13 @@ export class AnimalService {
   filtarAnimal(animal:Animal){
     return this.http.post('http://localhost:8080/animal/listarcomfiltro', animal, this.getAuthHeaders());
   }
+
+  setAnimais(animal:Animal){
+    this.animalBehaviorSubject.next(animal);
+  }
+
+  getAnimais(){
+    return this.animalBehaviorSubject;
+  }
+
 }

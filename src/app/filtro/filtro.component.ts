@@ -22,7 +22,7 @@ export class FiltroComponent implements OnInit {
   idCidadeSelecionada: string = '0';
 
   animal:Animal = {porte: "0", sexo: "0", idade: "0", tipo: "0"};
-
+  animais: Observable<any[]> = new Observable
   ngOnInit(): void {
     this.buscar();
   }
@@ -45,8 +45,10 @@ export class FiltroComponent implements OnInit {
     this.animalServico.filtarAnimal(this.animal).subscribe(
       resolve => {
         console.log(resolve);
+        this.animalServico.setAnimais(resolve);
+        this.animais = this.animalServico.getAnimais();
       }
-      , 
+      ,
       error => {
         console.error(error);
       }

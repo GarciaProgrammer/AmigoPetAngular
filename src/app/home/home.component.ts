@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   animais: Observable<Animal[]> = new Observable();
-  id?:any = null;
+  id?: any = null;
 
   constructor(private animalServico: AnimalService) {}
 
@@ -20,8 +20,9 @@ export class HomeComponent implements OnInit {
   }
 
   getAllAnimais() {
-    this.animais = this.animalServico.listarAnimais();
-    this.animais.subscribe((resolve) => console.log(resolve));
+    this.animalServico.listarAnimais().subscribe((resolve) => {
+      this.animalServico.setAnimais(resolve);
+      this.animais = this.animalServico.getAnimais();
+    });
   }
-
 }
