@@ -26,11 +26,12 @@ export class MenuComponent implements OnInit {
 
   logoff() {
     this.tokenService.removeToken();
+    this.logged = false;
     location.reload();
   }
 
   verificaUsuario() {
-    if (this.user != null) {
+    if (this.user.nome != null) {
       this.logged = true;
     } else {
       this.logged = false;

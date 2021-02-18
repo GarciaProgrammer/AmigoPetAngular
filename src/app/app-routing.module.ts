@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'meuperfil', component: PerfilUsuarioComponent, canActivate: [PadraoGuard]},
   { path: 'cadastroAnimal', component: CadastroAnimalComponent, canActivate: [PadraoGuard]},
   { path: 'cadastrardica', component: CadastrarDicaComponent, canActivate: [PadraoGuard]},
-  { path: 'editardica', component: EditarDicaComponent, canActivate: [PadraoGuard]},
+  { path: 'editardica/:id', component: EditarDicaComponent, canActivate: [PadraoGuard]},
   { path: 'editarpet/:id', component: EditAnimalComponent, canActivate: [PadraoGuard]},
   { path: 'listdicas', component: ListDicaComponent},
   { path: 'cadastro', component: CadastroComponent, },

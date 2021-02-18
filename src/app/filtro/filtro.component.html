@@ -7,7 +7,7 @@
                         <h3> Encontre seu parceiro</h3>
                     </div>
                     <div class="col-md-5">
-                        <button type="submit" class="slide_from_left">Filtrar</button>
+                        <button type="submit" class="slide_from_left" (click)="filtrar()">Filtrar</button>
                     </div>
                 </div>
                 <form action="" id="filtroAnimal">
@@ -16,15 +16,15 @@
                             <div class="row">
                                 <label for="estado"> Selecione um estado</label>
                                 <select name="estado" [(ngModel)]="idEstadoSelecionado"(change)="buscarCidade()">
-                                    <option value="0"> Selecione</option>
+                                    <option  value="0"> Selecione</option>
                                     <option *ngFor="let estado of estados | async" value="{{estado.id}}">{{estado.nome}}
                                     </option>
                                 </select>
                             </div>
                             <div class="row">
                                 <label for="cidade"> Selecione uma cidade</label>
-                                <select name="cidade">
-                                    <option> Selecione</option>
+                                <select name="cidade" [(ngModel)]="idCidadeSelecionada">
+                                    <option value="0"> Selecione</option>
                                     <option *ngFor="let cidade of cidades |async"  value="{{cidade.id}}">{{cidade.nome}}
                                     </option>
                                 </select>
@@ -33,35 +33,39 @@
                         <div class="col-md-3">
                             <div class="row">
                                 <label for="porte"> Porte</label>
-                                <select name="porte">
-                                    <option>Pequeno</option>
-                                    <option>Médio</option>
-                                    <option>Grande</option>
+                                <select name="porte" [(ngModel)]="animal.porte">
+                                    <option value="0"> Selecione</option>
+                                    <option value="Pequeno">Pequeno</option>
+                                    <option value="Médio">Médio</option>
+                                    <option value="Grande">Grande</option>
                                 </select>
                             </div>
                             <div class="row">
                                 <label for="especie"> Especie</label>
-                                <select name="especie">
-                                    <option>Cachorro</option>
-                                    <option>Gato</option>
-                                    <option>Outros</option>
+                                <select name="especie" [(ngModel)]="animal.tipo">
+                                    <option value="0"> Selecione</option>
+                                    <option value="Gato">Gato</option>
+                                    <option value="Cachorro">Outros</option>
+                                    <option value="Outros">Cachorro</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-5">
                             <div class="row">
-                                <label for="sexo"> Sexo</label>
-                                <select name="sexo">
-                                    <option>Fêmea</option>
-                                    <option>Macho</option>
+                                <label for="sexo"> Sexo </label>
+                                <select name="sexo" [(ngModel)]="animal.sexo">
+                                    <option value="0"> Selecione</option>
+                                    <option value="Fêmea">Fêmea</option>
+                                    <option value="Macho">Macho</option>
                                 </select>
                             </div>
                             <div class="row">
                                 <label for="idade"> Idade</label>
-                                <select name="idade">
-                                    <option> Filhote</option>
-                                    <option> Adulto </option>
-                                    <option> Idoso</option>
+                                <select name="idade" [(ngModel)]="animal.idade">
+                                    <option value="0"> Selecione</option>
+                                    <option value="Filhote"> Filhote</option>
+                                    <option value="Adulto"> Adulto </option>
+                                    <option value="Idoso"> Idoso</option>
                                 </select>
                             </div>
                         </div>

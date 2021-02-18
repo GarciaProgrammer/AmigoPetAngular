@@ -3,6 +3,9 @@ import { Estado } from './../beans/Estado';
 import { Observable, Subscriber } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Cidade } from '../beans/Cidade';
+import { AnimationAnimateChildMetadata } from '@angular/animations';
+import { Animal } from '../beans/Animal';
+import { AnimalService } from '../services/animal.service';
 
 @Component({
   selector: 'app-filtro',
@@ -11,11 +14,14 @@ import { Cidade } from '../beans/Cidade';
 })
 export class FiltroComponent implements OnInit {
 
-  constructor(private estadoServico: EstadoService) { }
+  constructor(private estadoServico: EstadoService, private animalServico: AnimalService) { }
 
   estados: Observable<Estado[]> = new Observable();
   cidades: Observable<Cidade[]> = new Observable();
   idEstadoSelecionado: string = '0';
+  idCidadeSelecionada: string = '0';
+
+  animal:Animal = {porte: "0", sexo: "0", idade: "0", tipo: "0"};
 
   ngOnInit(): void {
     this.buscar();
@@ -33,4 +39,17 @@ export class FiltroComponent implements OnInit {
     );
   }
 
+  filtrar(){
+    this.animal.estado = this.idEstadoSelecionado;
+    this.animal.cidade = this.idCidadeSelecionada;
+    this.animalServico.filtarAnimal(this.animal).subscribe(
+      resolve => {
+        console.log(resolve);
+      }
+      , 
+      error => {
+        console.error(error);
+      }
+    );
+  }
 }

@@ -45,4 +45,7 @@ export class AnimalService {
     return this.http.get('http://localhost:8080/animal/listarporStatus/'+ id + '/' + status, this.getAuthHeaders());
   }
 
+  filtarAnimal(animal:Animal){
+    return this.http.post('http://localhost:8080/animal/listarcomfiltro', animal, this.getAuthHeaders());
+  }
 }
