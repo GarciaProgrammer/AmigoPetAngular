@@ -38,4 +38,8 @@ export class DicaService {
   alterarDica(dica:Dica){
     return this.http.put('http://localhost:8080/dica/alterar/' + dica.id, dica, this.getAuthHeader());
   }
+
+  excluirDica(id?:number){
+    return this.http.delete('http://localhost:8080/dica/deletar/' + id, this.getAuthHeader());
+  }
 }

@@ -34,4 +34,12 @@ export class AddDicaComponent implements OnInit {
     )
   }
 
+  excluirDica(id?:number){
+    this.dicaServico.excluirDica(id).subscribe(
+      resolve => {
+        window.alert("Dica excluida com suesso!")
+      }
+    );
+  }
+
 }

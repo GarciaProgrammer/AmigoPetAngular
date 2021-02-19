@@ -24,7 +24,7 @@ export class CadastroAnimalComponent implements OnInit {
   idadeAnimal?: number;
   cidadeNome?: string = '0';
   animais?: Animal[];
-  animal: Animal = {tipo: "0", porte: "0"};
+  animal: Animal = { tipo: "0", porte: "0" };
   user$: Observable<Usuario>;
   user: Usuario = {};
 
@@ -57,12 +57,12 @@ export class CadastroAnimalComponent implements OnInit {
 
   salvar() {
     if (this.animal.nome != null) {
-      if(this.idadeAnimal != null && this.idadeAnimal >= 0){
-        if(this.idadeAnimal >= 0 && this.idadeAnimal <= 3) {
+      if (this.idadeAnimal != null && this.idadeAnimal >= 0) {
+        if (this.idadeAnimal >= 0 && this.idadeAnimal <= 3) {
           this.animal.idade = 'Filhote';
-        } else if (this.idadeAnimal >= 3 && this.idadeAnimal < 7){
+        } else if (this.idadeAnimal >= 3 && this.idadeAnimal < 7) {
           this.animal.idade = 'Adulto';
-        } else if ( this.idadeAnimal >= 7){
+        } else if (this.idadeAnimal >= 7) {
           this.animal.idade = 'Idoso';
         }
       }
@@ -71,15 +71,18 @@ export class CadastroAnimalComponent implements OnInit {
       this.animal.estado = this.idEstadoSelecionado;
       this.animal.cidade = this.idCidadeSelecionada;
       this.animal.usuario = this.user;
+
+      this.animalServico.salvarAnimal(this.animal).subscribe(
+        (animal: any) => {
+          alert('Animal ' + animal.nome + ' Salvo com sucesso!');
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+      this.animal = new Animal();
+    } else {
+      window.alert("Animal precisa de um nome!");
     }
-    this.animalServico.salvarAnimal(this.animal).subscribe(
-      (animal: any) => {
-        alert('Animal' + animal.nome + 'Salvo com sucesso!');
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-    this.animal = new Animal();
   }
 }

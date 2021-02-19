@@ -30,7 +30,7 @@ export class CadastrarDicaComponent implements OnInit {
   cadastrar(){
     this.dica.usuario = this.usuario;
     this.servico.cadastrarDica(this.dica).subscribe(
-      (dica:Dica) => window.alert("Dica " + dica.titulo + "Cadastrada com sucesso!")
+      (dica:Dica) => window.alert("Dica " + dica.titulo + " Cadastrada com sucesso!")
     );
     this.dica = new Dica;
   }

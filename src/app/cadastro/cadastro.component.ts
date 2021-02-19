@@ -17,14 +17,18 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastrar() {
-    this.servico.cadastrarUsuario(this.usuario).subscribe(
-      resolve => {
-        window.alert("Usuario " + this.usuario.nome + " Cadastrado com sucesso!")
-        this.usuario = new Usuario;
-      }, error => {
-        console.log(error);
-      }
-    );
+    if (this.usuario.email == null || this.usuario.nome == null || this.usuario.celular == null || this.usuario.senha == null) {
+      window.alert("Nenhum campo pode estar vazio!");
+    } else {
+      this.servico.cadastrarUsuario(this.usuario).subscribe(
+        resolve => {
+          window.alert("Usuario " + this.usuario.nome + " Cadastrado com sucesso!")
+          this.usuario = new Usuario;
+        }, error => {
+          window.alert("Email já cadastrado em nosso sistema!");
+        }
+      );
+    }
   }
 
 
